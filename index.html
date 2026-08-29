@@ -127,28 +127,26 @@
     font-size:.9rem;
     margin-top:12px;
   }
-  /* Texto discreto para espaço de imagem ainda sem arquivo */
-  .img-pending{
-    color:var(--graphite-soft);
-    font-size:.85rem;
-    font-style:italic;
-    margin:0 0 12px;
+  .mockup-img{
+    display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
+    border-radius:var(--radius);border:1px solid var(--border-soft);
+    margin-bottom:16px;
   }
   .depoimento-img{aspect-ratio:4/5;margin:0 auto 20px;max-width:360px;}
   .depoimento-img.grande{aspect-ratio:4/5;max-width:320px;max-height:420px;}
   .foto-placeholder{aspect-ratio:1/1;max-width:280px;margin:0 auto 24px;}
   /* Imagens reais (não placeholder): mesma caixa, sem a moldura tracejada */
   img.depoimento-img{
-    display:block;width:100%;object-fit:contain;
+    display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;
     border-radius:var(--radius);background:var(--white);
     border:1px solid var(--border-soft);
   }
   img.foto-placeholder{
-    display:block;width:100%;height:100%;object-fit:cover;
+    display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
     border-radius:var(--radius);
   }
   .depo-grid img{
-    display:block;width:100%;aspect-ratio:4/5;object-fit:contain;
+    display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;
     border-radius:var(--radius);background:var(--white);
     border:1px solid var(--border-soft);
   }
@@ -447,8 +445,7 @@
       <article class="stack-card">
         <div class="stack-card__head">Tabela de Quantidades por Clima e Mês</div>
         <div class="stack-card__body">
-          <!-- IMG FUTURA: imgs/mockup-tabela.jpg -->
-          <p class="img-pending">Mockup: Tabela de Quantidades</p>
+          <img class="mockup-img" src="imgs/mockuptabela.jpg" alt="Mockup da Tabela de Quantidades por clima e mês de nascimento" width="640" height="800" loading="lazy" decoding="async">
           <p>Quantos bodies, macacões, mantas e paninhos, cruzando o mês que seu bebê nasce com o clima da sua cidade e quantas vezes você lava roupa por semana.</p>
         </div>
       </article>
@@ -456,8 +453,7 @@
       <article class="stack-card">
         <div class="stack-card__head">Planilha de Preços e Controle</div>
         <div class="stack-card__body">
-          <!-- IMG FUTURA: imgs/mockup-planilha.jpg -->
-          <p class="img-pending">Mockup: Planilha de Controle</p>
+          <img class="mockup-img" src="imgs/mockupplanilha.jpg" alt="Mockup da Planilha de Preços e Controle, com itens, quantidade e preço médio" width="640" height="800" loading="lazy" decoding="async">
           <p>Todos os itens, quantidade, preço médio e espaço pra anotar onde você achou mais barato e o que já comprou.</p>
         </div>
       </article>
@@ -465,8 +461,7 @@
       <article class="stack-card">
         <div class="stack-card__head">Cronograma Semana a Semana</div>
         <div class="stack-card__body">
-          <!-- IMG FUTURA: imgs/mockup-cronograma.jpg -->
-          <p class="img-pending">Mockup: Cronograma Semana a Semana</p>
+          <img class="mockup-img" src="imgs/mockupcronograma.jpg" alt="Mockup do Cronograma Semana a Semana, da 12ª à 40ª semana" width="640" height="800" loading="lazy" decoding="async">
           <p>De 12 a 40 semanas: o que fazer, o que comprar e o que já pode ser encomendado, incluindo o que demora pra entregar e não pode ficar pra última hora.</p>
         </div>
       </article>
@@ -474,8 +469,7 @@
       <article class="stack-card">
         <div class="stack-card__head">Mala da Maternidade Pronta</div>
         <div class="stack-card__body">
-          <!-- IMG FUTURA: imgs/mockup-mala.jpg -->
-          <p class="img-pending">Mockup: Mala da Maternidade</p>
+          <img class="mockup-img" src="imgs/mockupmala.jpg" alt="Mockup da Mala da Maternidade, com checklist do que levar" width="640" height="800" loading="lazy" decoding="async">
           <p>A sua e a do bebê: o que a maternidade pede, o que ninguém avisa e o que você não precisa levar.</p>
         </div>
       </article>
@@ -483,8 +477,7 @@
       <article class="stack-card">
         <div class="stack-card__head">O Chá de Bebê Perfeito</div>
         <div class="stack-card__body">
-          <!-- IMG FUTURA: imgs/mockup-cha.jpg -->
-          <p class="img-pending">Mockup: Chá de Bebê</p>
+          <img class="mockup-img" src="imgs/mockupcha.jpg" alt="Mockup do Chá de Bebê Estratégico, com lista de presentes" width="640" height="800" loading="lazy" decoding="async">
           <p>Como montar a lista do chá pra receber justamente os itens caros que você não vai comprar, e não ganhar cinco mantas repetidas.</p>
         </div>
       </article>
@@ -566,7 +559,7 @@
   <!-- SEÇÃO 11 — HISTÓRIA -->
   <section class="bg-cream">
     <div class="wrap">
-      <img class="foto-placeholder" src="imgs/esp-oficial.jpg" alt="Marina segurando o bebê no colo, no quarto do bebê" width="800" height="1000" loading="lazy" decoding="async">
+      <img class="foto-placeholder" src="imgs/marina.jpg" alt="Marina com o rosto próximo ao do bebê recém-nascido no colo" width="640" height="640" loading="lazy" decoding="async">
       <h2 class="center">Oi, eu sou a Marina 🤍</h2>
       <p>Quando eu engravidei, abri uma lista de enxoval da internet e ela tinha mais de 180 itens. Comprei quase tudo. Achei que era isso que uma boa mãe fazia.</p>
       <p>Uns quatro meses depois do Theo nascer, fui arrumar o quarto dele e me deparei com a saída de maternidade usada uma vez, o kit berço que tive que tirar por segurança, o canguru que ele odiou, o termômetro de banho, os sapatinhos que nunca serviram. Fiz a conta do que estava ali parado.</p>
