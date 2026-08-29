@@ -128,16 +128,13 @@
     margin-top:12px;
   }
   .mockup-img{
-    display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;
-    border-radius:var(--radius);border:1px solid var(--border-soft);
-    margin-bottom:16px;
+    display:block;width:100%;height:auto;
   }
-  .depoimento-img{aspect-ratio:4/5;margin:0 auto 20px;max-width:360px;}
-  .depoimento-img.grande{aspect-ratio:4/5;max-width:320px;max-height:420px;}
+  .depoimento-img.grande{margin:0 auto 20px;}
   .foto-placeholder{aspect-ratio:1/1;max-width:280px;margin:0 auto 24px;}
-  /* Imagens reais (não placeholder): mesma caixa, sem a moldura tracejada */
+  /* Imagens reais: cada uma usa a proporção real do arquivo (via width/height do HTML) */
   img.depoimento-img{
-    display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;
+    display:block;width:100%;height:auto;
     border-radius:var(--radius);background:var(--white);
     border:1px solid var(--border-soft);
   }
@@ -146,7 +143,7 @@
     border-radius:var(--radius);
   }
   .depo-grid img{
-    display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;
+    display:block;width:100%;height:auto;
     border-radius:var(--radius);background:var(--white);
     border:1px solid var(--border-soft);
   }
@@ -184,7 +181,7 @@
   }
   .check-list li p{margin:0;}
   /* Cards de depoimento (grid de 3) */
-  .depo-grid{display:flex;flex-direction:column;gap:16px;margin-bottom:24px;}
+  .depo-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
   /* Cards do stack */
   .stack-card{
     background:var(--cream);
@@ -444,40 +441,40 @@
 
       <article class="stack-card">
         <div class="stack-card__head">Tabela de Quantidades por Clima e Mês</div>
+        <img class="mockup-img" src="imgs/mockuptabela.jpg" alt="Mockup da Tabela de Quantidades por clima e mês de nascimento" width="640" height="800" loading="lazy" decoding="async">
         <div class="stack-card__body">
-          <img class="mockup-img" src="imgs/mockuptabela.jpg" alt="Mockup da Tabela de Quantidades por clima e mês de nascimento" width="640" height="800" loading="lazy" decoding="async">
           <p>Quantos bodies, macacões, mantas e paninhos, cruzando o mês que seu bebê nasce com o clima da sua cidade e quantas vezes você lava roupa por semana.</p>
         </div>
       </article>
 
       <article class="stack-card">
         <div class="stack-card__head">Planilha de Preços e Controle</div>
+        <img class="mockup-img" src="imgs/mockupplanilha.jpg" alt="Mockup da Planilha de Preços e Controle, com itens, quantidade e preço médio" width="640" height="800" loading="lazy" decoding="async">
         <div class="stack-card__body">
-          <img class="mockup-img" src="imgs/mockupplanilha.jpg" alt="Mockup da Planilha de Preços e Controle, com itens, quantidade e preço médio" width="640" height="800" loading="lazy" decoding="async">
           <p>Todos os itens, quantidade, preço médio e espaço pra anotar onde você achou mais barato e o que já comprou.</p>
         </div>
       </article>
 
       <article class="stack-card">
         <div class="stack-card__head">Cronograma Semana a Semana</div>
+        <img class="mockup-img" src="imgs/mockupcronograma.jpg" alt="Mockup do Cronograma Semana a Semana, da 12ª à 40ª semana" width="640" height="800" loading="lazy" decoding="async">
         <div class="stack-card__body">
-          <img class="mockup-img" src="imgs/mockupcronograma.jpg" alt="Mockup do Cronograma Semana a Semana, da 12ª à 40ª semana" width="640" height="800" loading="lazy" decoding="async">
           <p>De 12 a 40 semanas: o que fazer, o que comprar e o que já pode ser encomendado, incluindo o que demora pra entregar e não pode ficar pra última hora.</p>
         </div>
       </article>
 
       <article class="stack-card">
         <div class="stack-card__head">Mala da Maternidade Pronta</div>
+        <img class="mockup-img" src="imgs/mockupmala.jpg" alt="Mockup da Mala da Maternidade, com checklist do que levar" width="640" height="800" loading="lazy" decoding="async">
         <div class="stack-card__body">
-          <img class="mockup-img" src="imgs/mockupmala.jpg" alt="Mockup da Mala da Maternidade, com checklist do que levar" width="640" height="800" loading="lazy" decoding="async">
           <p>A sua e a do bebê: o que a maternidade pede, o que ninguém avisa e o que você não precisa levar.</p>
         </div>
       </article>
 
       <article class="stack-card">
         <div class="stack-card__head">O Chá de Bebê Perfeito</div>
+        <img class="mockup-img" src="imgs/mockupcha.jpg" alt="Mockup do Chá de Bebê Estratégico, com lista de presentes" width="640" height="800" loading="lazy" decoding="async">
         <div class="stack-card__body">
-          <img class="mockup-img" src="imgs/mockupcha.jpg" alt="Mockup do Chá de Bebê Estratégico, com lista de presentes" width="640" height="800" loading="lazy" decoding="async">
           <p>Como montar a lista do chá pra receber justamente os itens caros que você não vai comprar, e não ganhar cinco mantas repetidas.</p>
         </div>
       </article>
