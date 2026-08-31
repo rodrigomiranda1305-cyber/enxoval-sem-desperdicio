@@ -331,7 +331,29 @@
   }
   strong{color:var(--graphite);}
 </style>
-<!-- [PIXEL_META] colar aqui o código do Pixel da Meta -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1213710234251313');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'Enxoval Sem Desperdício',
+  content_type: 'product',
+  value: 29.90,
+  currency: 'BRL'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -573,6 +595,41 @@
     bar.classList.remove('is-visible');
   });
   window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Repassa fbclid/UTM pro link externo do checkout, pra manter o rastro do clique.
+  var params = new URLSearchParams(window.location.search);
+  var toForward = new URLSearchParams();
+  ['fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(key){
+    if (params.has(key)) toForward.set(key, params.get(key));
+  });
+  var checkoutLink = document.querySelector('a[href^="https://pay.wiapy.com"]');
+  if (checkoutLink && toForward.toString()) {
+    var sep = checkoutLink.href.indexOf('?') === -1 ? '?' : '&';
+    checkoutLink.href = checkoutLink.href + sep + toForward.toString();
+  }
+
+  // Pixel: InitiateCheckout no clique real do botão de compra.
+  if (checkoutLink && typeof fbq === 'function') {
+    checkoutLink.addEventListener('click', function(e){
+      e.preventDefault();
+      var dest = checkoutLink.href;
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'Enxoval Sem Desperdício',
+        value: 29.90,
+        currency: 'BRL'
+      });
+      setTimeout(function(){ window.location.href = dest; }, 250);
+    });
+  }
+
+  // Pixel: evento customizado pros CTAs internos, pra mapear qual chamada converte melhor.
+  if (typeof fbq === 'function') {
+    document.querySelectorAll('a[href="#planos"]').forEach(function(link){
+      link.addEventListener('click', function(){
+        fbq('trackCustom', 'CTA_Click', { label: link.textContent.trim() });
+      });
+    });
+  }
 })();
 </script>
 
