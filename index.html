@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enxoval Sem Desperdício: dá tempo de montar tudo, na ordem certa</title>
-<meta name="description" content="O guia que mostra o que comprar, quanto e em que ordem, semana a semana. Chegue no parto com tudo pronto, sem desperdiçar R$1.500. A partir de R$17.">
+<meta name="description" content="O guia que mostra o que comprar, quanto e em que ordem, semana a semana. Chegue no parto com tudo pronto, sem desperdiçar R$1.500. Por R$29,90.">
 <link rel="preload" as="font" href="fonts/poppins-700.woff2" type="font/woff2" crossorigin>
 <style>
   @font-face{
@@ -37,7 +37,6 @@
     --graphite-soft:#6B6560;
     --green:#2FA84F;
     --green-dark:#248F3D;
-    --gray-btn:#3D3D3D;
     --border-soft:#E6DED4;
     --radius:12px;
     --max:640px;
@@ -116,11 +115,6 @@
     color:#FFFFFF;
   }
   .btn-cta:hover,.btn-cta:focus-visible{background:var(--green-dark);}
-  .btn-neutral{
-    background:var(--gray-btn);
-    color:#FFFFFF;
-  }
-  .btn-neutral:hover,.btn-neutral:focus-visible{background:#2A2A2A;}
   .microcopy{
     text-align:center;
     color:var(--graphite-soft);
@@ -211,6 +205,8 @@
   .stack-fecho{text-align:center;font-size:1.05rem;margin:8px 0 24px;}
   /* Planos */
   .plans{display:flex;flex-direction:column;gap:24px;margin-bottom:20px;}
+  .plan-card--unica{max-width:440px;margin:0 auto;}
+  .plan-note{text-align:center;color:var(--graphite-soft);font-size:.85rem;margin-top:14px;}
   .plan-card{
     background:var(--white);
     border-radius:16px;
@@ -223,17 +219,6 @@
     position:relative;
     box-shadow:0 10px 30px rgba(142,42,66,.12);
   }
-  .badge{
-    display:inline-block;
-    background:var(--wine);
-    color:#fff;
-    font-weight:700;
-    font-size:.78rem;
-    letter-spacing:.03em;
-    padding:6px 14px;
-    border-radius:999px;
-    margin-bottom:14px;
-  }
   .plan-card h3{font-size:1.3rem;margin-bottom:16px;}
   .plan-check{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:10px;}
   .plan-check li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;}
@@ -243,7 +228,6 @@
     color:var(--green-dark);
     font-weight:700;
   }
-  .plan-price-basic{font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:1.6rem;margin-bottom:16px;}
   .plan-price-block{margin-bottom:18px;}
   .plan-footnote{color:var(--graphite-soft);font-size:.95rem;text-align:center;margin-top:8px;}
   /* Resumo + FAQ */
@@ -357,7 +341,7 @@
     <h1>Está de 28, 31, 34 semanas e ainda não comprou quase nada? Com a ordem certa, dá tempo. E ainda sobra dinheiro.</h1>
     <p class="sub">O guia que te mostra o que comprar, quanto e em que ordem, semana a semana: o enxoval completo e lindo, sem desperdiçar R$1.500 em itens que ficam no armário.</p>
     <a href="#planos" class="btn btn-cta">QUERO VER A ORDEM CERTA</a>
-    <p class="microcopy">Acesso imediato · A partir de R$17 · Garantia de 7 dias</p>
+    <p class="microcopy">Acesso imediato · R$29,90 · Garantia de 7 dias</p>
   </div>
 </header>
 
@@ -445,7 +429,7 @@
   <!-- SEÇÃO 8 — STACK DO PLANO COMPLETO -->
   <section class="bg-white">
     <div class="wrap">
-      <h2>No Plano Completo, além do guia, você leva tudo isso:</h2>
+      <h2>Além do guia, você leva tudo isso junto:</h2>
 
       <article class="stack-card">
         <div class="stack-card__head">Cronograma Semana a Semana</div>
@@ -487,31 +471,19 @@
         </div>
       </article>
 
-      <p class="stack-fecho">Somando tudo, seria fácil cobrar R$97 por esse material. Hoje, o Plano Completo custa R$37, menos que um macacão que seu bebê vai usar duas vezes.</p>
-      <a href="#planos" class="btn btn-cta">QUERO O PLANO COMPLETO</a>
+      <p class="stack-fecho">Somando tudo, seria fácil cobrar R$97 por esse material. Hoje, tudo isso sai por R$29,90, menos que um macacão que seu bebê vai usar duas vezes.</p>
+      <a href="#planos" class="btn btn-cta">QUERO TUDO ISSO</a>
     </div>
   </section>
 
   <!-- SEÇÃO 9 — PLANOS -->
   <section class="bg-cream" id="planos">
     <div class="wrap">
-      <h2 class="center">Escolha a melhor opção pra você:</h2>
+      <h2 class="center">Tudo isso, num pagamento único:</h2>
       <div class="plans">
 
-        <div class="plan-card">
-          <h3>Plano Básico</h3>
-          <ul class="plan-check">
-            <li>O Guia: Enxoval Sem Desperdício</li>
-            <li>1 ano de acesso</li>
-          </ul>
-          <div class="plan-price-basic">R$17 à vista</div>
-          <!-- AQUI: link checkout Plano Básico -->
-          <a href="#" class="btn btn-neutral">QUERO SÓ O GUIA</a>
-        </div>
-
-        <div class="plan-card plan-card--destaque">
-          <span class="badge">O MAIS ESCOLHIDO PELAS MÃES</span>
-          <h3>Plano Completo</h3>
+        <div class="plan-card plan-card--destaque plan-card--unica">
+          <h3>Enxoval Sem Desperdício</h3>
           <ul class="plan-check">
             <li>O Guia Completo: Enxoval Sem Desperdício 3.0</li>
             <li>Cronograma Semana a Semana</li>
@@ -524,10 +496,11 @@
           </ul>
           <div class="plan-price-block">
             <div class="price-strike">R$97</div>
-            <div class="price-big">R$37 à vista</div>
+            <div class="price-big">R$29,90 à vista</div>
           </div>
-          <!-- AQUI: link checkout Plano Completo -->
-          <a href="#" class="btn btn-cta">SIM! QUERO O PLANO COMPLETO</a>
+          <!-- AQUI: link do checkout -->
+          <a href="#" class="btn btn-cta">SIM, QUERO O GUIA COMPLETO</a>
+          <p class="plan-note">Sem versão básica, sem plano capado. É tudo o que existe, num pagamento único.</p>
         </div>
 
       </div>
@@ -540,14 +513,14 @@
     <div class="wrap">
       <div class="resumo-box">
         <h2>Não conseguiu ler tudo? Eu resumo:</h2>
-        <p>Se você quer chegar no parto com tudo pronto, sem correria de última hora e sem desperdiçar R$1.500, esse guia é uma decisão inteligente. Pagamento único, 5 materiais extras no Plano Completo, sem pegadinha e com 7 dias de garantia. Se não gostar, devolvo seu dinheiro.</p>
+        <p>Se você quer chegar no parto com tudo pronto, sem correria de última hora e sem desperdiçar R$1.500, esse guia é uma decisão inteligente. Pagamento único de R$29,90, o guia mais os 5 materiais, sem pegadinha e com 7 dias de garantia. Se não gostar, devolvo seu dinheiro.</p>
         <a href="#planos" class="btn btn-cta">EU QUERO!</a>
       </div>
 
       <div class="faq">
         <details class="faq-item" open>
           <summary>Legal… mas se é tão bom, por que está tão barato?</summary>
-          <p>Os R$17 e R$37 são de propósito, por duas razões. Razão 1: seria muito estranho eu cobrar caro de quem está tentando justamente não gastar à toa, né? Se o preço fosse um obstáculo, quem mais precisa ficaria de fora. Razão 2: preço baixo filtra quem só quer conteúdo grátis. E quem gosta acaba me seguindo e mandando pra outra grávida, que é como isso cresce. Sem letra miúda.</p>
+          <p>Os R$29,90 são de propósito, por duas razões. Razão 1: seria muito estranho eu cobrar caro de quem está tentando justamente não gastar à toa, né? Se o preço fosse um obstáculo, quem mais precisa ficaria de fora. Razão 2: preço baixo filtra quem só quer conteúdo grátis. E quem gosta acaba me seguindo e mandando pra outra grávida, que é como isso cresce. Sem letra miúda, e sem versão capada: existe uma coisa só, e ela vem completa.</p>
         </details>
         <details class="faq-item">
           <summary>Em quanto tempo eu recebo meu acesso?</summary>
@@ -581,7 +554,7 @@
 </main>
 
 <footer class="sticky-bar" id="stickyBar">
-  <p class="sticky-bar__text">Enxoval Sem Desperdício, a partir de R$17</p>
+  <p class="sticky-bar__text">Enxoval Sem Desperdício, por R$29,90</p>
   <a href="#planos" class="sticky-bar__cta">QUERO O GUIA</a>
   <button type="button" class="sticky-bar__close" id="stickyBarClose" aria-label="Fechar barra">✕</button>
 </footer>
