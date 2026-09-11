@@ -403,13 +403,13 @@
 </style>
 <!-- Meta Pixel Code -->
 <script>
+/* Stub do fbq: os eventos entram na fila agora e sobem assim que o
+   fbevents.js carregar. A injeção do script foi adiada (ver abaixo). */
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+n.queue=[]}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1213710234251313');
 fbq('track', 'PageView');
@@ -419,6 +419,30 @@ fbq('track', 'ViewContent', {
   value: 29.90,
   currency: 'BRL'
 });
+
+/* Carrega o fbevents.js no que vier primeiro: primeira interação
+   do usuário ou 3s depois do load. Uma vez só. */
+(function(w,d){
+  var started = false;
+  function loadPixel(){
+    if (started) return;
+    started = true;
+    var t = d.createElement('script');
+    t.async = true;
+    t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    d.head.appendChild(t);
+  }
+  w.esdLoadPixel = loadPixel;
+  /* true só depois que o fbevents.js assumiu o fbq de verdade */
+  w.esdPixelReady = function(){
+    return typeof w.fbq === 'function' && !!w.fbq.callMethod;
+  };
+  ['scroll','touchstart','pointerdown','keydown'].forEach(function(ev){
+    w.addEventListener(ev, loadPixel, {passive:true, once:true});
+  });
+  if (d.readyState === 'complete') setTimeout(loadPixel, 3000);
+  else w.addEventListener('load', function(){ setTimeout(loadPixel, 3000); }, {once:true});
+})(window, document);
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
@@ -435,9 +459,9 @@ src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
     <p class="sub">O Enxoval Sem Desperdício mostra o que comprar agora, o que pode esperar e a quantidade certa de cada peça de acordo com a semana da gestação, o nascimento do bebê e o clima da sua cidade.</p>
     <div class="hero-mockup">
       <div class="mockup-stack">
-        <img class="mockup-stack__img mockup-stack__img--back" src="imgs/mockupplanilha.jpg" alt="Recorte real da Planilha de Preços e Controle" width="566" height="532" decoding="async">
-        <img class="mockup-stack__img mockup-stack__img--mid" src="imgs/mockuptabela.jpg" alt="Recorte real da Tabela de Quantidades por Clima" width="570" height="560" decoding="async">
-        <img class="mockup-stack__img mockup-stack__img--front" src="imgs/mockupcronograma.jpg" alt="Recorte real do Cronograma Semana a Semana" width="570" height="556" fetchpriority="high" decoding="async">
+        <img class="mockup-stack__img mockup-stack__img--back" src="imgs/hero-planilha.webp" alt="Recorte real da Planilha de Preços e Controle" width="220" height="207" decoding="async">
+        <img class="mockup-stack__img mockup-stack__img--mid" src="imgs/hero-tabela.webp" alt="Recorte real da Tabela de Quantidades por Clima" width="220" height="216" decoding="async">
+        <img class="mockup-stack__img mockup-stack__img--front" src="imgs/hero-cronograma.webp" alt="Recorte real do Cronograma Semana a Semana" width="220" height="215" fetchpriority="high" decoding="async">
       </div>
       <p class="hero-mockup__label"><strong>ENXOVAL SEM DESPERDÍCIO</strong>6 materiais para organizar seu enxoval do terceiro trimestre até a maternidade.</p>
     </div>
@@ -540,23 +564,23 @@ src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
       <p>Recortes reais dos materiais que você recebe, sem enfeite.</p>
       <div class="demo-grid">
         <figure class="demo-card">
-          <img src="imgs/mockupcronograma.jpg" alt="Recorte real do Cronograma Semana a Semana, da 12ª à 40ª semana" width="570" height="556" loading="lazy" decoding="async">
+          <img src="imgs/mockupcronograma.webp" alt="Recorte real do Cronograma Semana a Semana, da 12ª à 40ª semana" width="570" height="556" loading="lazy" decoding="async">
           <figcaption>Exemplo: cronograma da 12ª à 40ª semana</figcaption>
         </figure>
         <figure class="demo-card">
-          <img src="imgs/mockuptabela.jpg" alt="Recorte real da Tabela de Quantidades, com colunas para clima frio, calor e ameno" width="570" height="560" loading="lazy" decoding="async">
+          <img src="imgs/mockuptabela.webp" alt="Recorte real da Tabela de Quantidades, com colunas para clima frio, calor e ameno" width="570" height="560" loading="lazy" decoding="async">
           <figcaption>Exemplo: quantidades mudam entre frio, calor e ameno</figcaption>
         </figure>
         <figure class="demo-card">
-          <img src="imgs/mockupplanilha.jpg" alt="Recorte real da Planilha de Preços e Controle, com itens, quantidade e preço médio" width="566" height="532" loading="lazy" decoding="async">
+          <img src="imgs/mockupplanilha.webp" alt="Recorte real da Planilha de Preços e Controle, com itens, quantidade e preço médio" width="566" height="532" loading="lazy" decoding="async">
           <figcaption>Exemplo: controle de preços e do que já foi comprado</figcaption>
         </figure>
         <figure class="demo-card">
-          <img src="imgs/mockupmala.jpg" alt="Recorte real do checklist da Mala da Maternidade" width="578" height="590" loading="lazy" decoding="async">
+          <img src="imgs/mockupmala.webp" alt="Recorte real do checklist da Mala da Maternidade" width="578" height="590" loading="lazy" decoding="async">
           <figcaption>Exemplo: checklist da mala da maternidade</figcaption>
         </figure>
         <figure class="demo-card">
-          <img src="imgs/mockupcha.jpg" alt="Recorte real da lista de presentes do Chá de Bebê" width="566" height="540" loading="lazy" decoding="async">
+          <img src="imgs/mockupcha.webp" alt="Recorte real da lista de presentes do Chá de Bebê" width="566" height="540" loading="lazy" decoding="async">
           <figcaption>Exemplo: lista de presentes do chá de bebê</figcaption>
         </figure>
       </div>
@@ -567,13 +591,13 @@ src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
   <section class="bg-cream" aria-label="Provas">
     <div class="wrap">
       <h2>Quem usou, conta</h2>
-      <img class="depoimento-img grande" src="imgs/depoimento-principal.jpg" alt="Print de depoimento: mãe contando que terminou de montar o enxoval do bebê e economizou quase R$1.500" width="640" height="975" loading="lazy" decoding="async">
+      <img class="depoimento-img grande" src="imgs/depoimento-principal.webp" alt="Print de depoimento: mãe contando que terminou de montar o enxoval do bebê e economizou quase R$1.500" width="640" height="975" loading="lazy" decoding="async">
       <p style="font-weight:600;">"Economizei quase R$1.500 e não ficou faltando nada."</p>
       <p class="proof-tag">Gestante que utilizou o método para montar o enxoval.</p>
 
       <div class="depo-grid">
-        <img src="imgs/depo-novo.jpg" alt="Print de mensagem: mãe contando que conseguiu montar o enxoval mesmo em cima da hora, com a ajuda do método" width="640" height="960" loading="lazy" decoding="async">
-        <img src="imgs/instagram-2.jpg" alt="Print de caixinha do Instagram: &quot;Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha&quot;" width="800" height="356" loading="lazy" decoding="async">
+        <img src="imgs/depo-novo.webp" alt="Print de mensagem: mãe contando que conseguiu montar o enxoval mesmo em cima da hora, com a ajuda do método" width="640" height="960" loading="lazy" decoding="async">
+        <img src="imgs/instagram-2.webp" alt="Print de caixinha do Instagram: &quot;Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha&quot;" width="700" height="312" loading="lazy" decoding="async">
       </div>
       <p class="proof-tag">Gestantes que utilizaram o método para montar o enxoval.</p>
     </div>
@@ -582,7 +606,7 @@ src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
   <!-- SEÇÃO 6 — HISTÓRIA (MARINA) -->
   <section class="bg-white" aria-label="História">
     <div class="wrap">
-      <img class="foto-placeholder" src="imgs/marina.jpg" alt="Marina com o rosto próximo ao do bebê recém-nascido no colo" width="640" height="640" loading="lazy" decoding="async">
+      <img class="foto-placeholder" src="imgs/marina.webp" alt="Marina com o rosto próximo ao do bebê recém-nascido no colo" width="640" height="640" loading="lazy" decoding="async">
       <h2>Eu criei este método depois de encontrar R$1.680 em coisas que meu filho nem usou.</h2>
       <p>Eu sou Marina, mãe de dois. Na minha primeira gravidez, fiz o que quase toda mãe faz: peguei uma lista enorme na internet e comecei a comprar.</p>
       <p>Quatro meses depois do nascimento, contei o que estava parado: R$1.680 em coisas que praticamente não foram usadas.</p>
@@ -750,17 +774,44 @@ src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
   }
 
   // Pixel: InitiateCheckout no clique real de qualquer botão de compra.
-  if (checkoutLinks.length && typeof fbq === 'function') {
+  // Se o fbevents.js ainda não carregou, manda o evento direto pro
+  // endpoint da Meta, pra não perder nenhuma conversão. Só um dos dois
+  // caminhos roda por clique, então não duplica.
+  function readCookie(name){
+    var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return m ? m.pop() : '';
+  }
+  function beaconInitiateCheckout(){
+    var p = new URLSearchParams();
+    p.set('id', '1213710234251313');
+    p.set('ev', 'InitiateCheckout');
+    p.set('dl', window.location.href);
+    p.set('rl', document.referrer || '');
+    p.set('ts', String(Date.now()));
+    p.set('cd[content_name]', 'Enxoval Sem Desperdício');
+    p.set('cd[value]', '29.90');
+    p.set('cd[currency]', 'BRL');
+    var fbp = readCookie('_fbp'); if (fbp) p.set('cd[fbp]', fbp);
+    var fbc = readCookie('_fbc'); if (fbc) p.set('cd[fbc]', fbc);
+    new Image().src = 'https://www.facebook.com/tr?' + p.toString();
+  }
+  if (checkoutLinks.length) {
     checkoutLinks.forEach(function(link){
       link.addEventListener('click', function(e){
         e.preventDefault();
         var dest = link.href;
-        fbq('track', 'InitiateCheckout', {
-          content_name: 'Enxoval Sem Desperdício',
-          value: 29.90,
-          currency: 'BRL'
-        });
-        setTimeout(function(){ window.location.href = dest; }, 250);
+        if (window.esdLoadPixel) window.esdLoadPixel();
+        var ready = window.esdPixelReady && window.esdPixelReady();
+        if (ready) {
+          fbq('track', 'InitiateCheckout', {
+            content_name: 'Enxoval Sem Desperdício',
+            value: 29.90,
+            currency: 'BRL'
+          });
+        } else {
+          beaconInitiateCheckout();
+        }
+        setTimeout(function(){ window.location.href = dest; }, ready ? 250 : 400);
       });
     });
   }
