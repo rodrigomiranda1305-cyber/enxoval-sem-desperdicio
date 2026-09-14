@@ -12,6 +12,9 @@
   @font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/poppins-700.woff2') format('woff2');}
   @font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/poppins-600.woff2') format('woff2');}
   @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/inter-var.woff2') format('woff2');}
+  /* Fallbacks com as métricas da Poppins e da Inter: evitam o texto pular quando a fonte carrega (CLS) */
+  @font-face{font-family:'Poppins Fallback';src:local('Arial'),local('Helvetica');ascent-override:93.62%;descent-override:31.21%;line-gap-override:8.92%;size-adjust:112.16%;}
+  @font-face{font-family:'Inter Fallback';src:local('Arial'),local('Helvetica');ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%;}
 
   :root{
     --bg:#FAF6F1;
@@ -34,11 +37,11 @@
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
   body{
     margin:0;background:var(--bg);color:var(--ink);
-    font:450 17px/1.6 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    font:450 17px/1.6 'Inter','Inter Fallback',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     font-synthesis:none;text-rendering:optimizeLegibility;
   }
   img{display:block;max-width:100%;height:auto;}
-  h1,h2,h3{font-family:'Poppins',system-ui,-apple-system,sans-serif;color:var(--ink);margin:0;}
+  h1,h2,h3{font-family:'Poppins','Poppins Fallback',system-ui,-apple-system,sans-serif;color:var(--ink);margin:0;}
   h1{font-weight:700;font-size:clamp(28px,7.4vw,48px);line-height:1.12;letter-spacing:-.015em;}
   h2{font-weight:700;font-size:clamp(25px,6.4vw,38px);line-height:1.18;letter-spacing:-.01em;}
   h3{font-weight:600;font-size:19px;line-height:1.3;}
@@ -48,10 +51,10 @@
 
   .wrap{width:100%;max-width:680px;margin:0 auto;padding:0 22px;}
   .wrap--wide{max-width:1080px;}
-  .section{padding:60px 0;}
+  .section{padding:56px 0;}
   .section--paper{background:var(--paper);}
-  @media (min-width:900px){.section{padding:100px 0;}}
-  .kicker{font:600 15px/1.3 'Poppins',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--wine);margin-bottom:12px;}
+  @media (min-width:900px){.section{padding:96px 0;}}
+  .kicker{font:600 15px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--wine);margin-bottom:12px;}
   .head > * + *{margin-top:14px;}
   .lead{font-size:18px;}
 
@@ -60,7 +63,7 @@
     display:flex;align-items:center;justify-content:center;gap:10px;
     width:100%;min-height:60px;padding:16px 20px;border-radius:14px;
     background:var(--green);color:#fff;text-decoration:none;text-align:center;
-    font:700 17px/1.2 'Poppins',system-ui,sans-serif;letter-spacing:.01em;
+    font:700 17px/1.2 'Poppins','Poppins Fallback',system-ui,sans-serif;letter-spacing:.01em;
     box-shadow:0 12px 24px -10px rgba(31,122,61,.6);
     transition:background .15s ease,transform .15s ease;
     -webkit-tap-highlight-color:transparent;
@@ -75,31 +78,37 @@
   }
   .cta-block{margin-top:30px;}
   .cta-note{margin-top:12px;font-size:15px;line-height:1.45;color:var(--ink-2);text-align:center;}
+  /* Redução de risco logo abaixo do botão: lida num relance */
+  .assure{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;font-size:15px;line-height:1.3;color:var(--ink-2);}
+  .assure li{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .assure li::before{content:"";flex:0 0 16px;width:16px;height:16px;border-radius:50%;background:var(--green-50) var(--check) center/10px no-repeat;}
+  .assure strong{color:var(--ink);font-weight:700;}
   @media (min-width:900px){
     .cta{display:inline-flex;width:auto;padding:18px 34px;}
     .cta-block--center{text-align:center;}
+    .cta-block--left .assure{justify-content:flex-start;}
   }
 
   /* ---------- HERO ---------- */
-  .hero{padding:26px 0 52px;}
+  .hero{padding:22px 0 48px;}
   .hero__grid{display:grid;}
-  .hero__eyebrow{font-weight:600;font-size:16px;line-height:1.4;color:var(--wine);margin-bottom:12px;}
+  .hero__eyebrow{font-weight:600;font-size:16px;line-height:1.4;color:var(--wine);margin-bottom:10px;}
   .hero h1 mark{background:none;color:var(--wine);}
-  .hero__sub{margin-top:14px;}
-  .hero__cta{margin-top:24px;}
-  .hero__visual{margin-top:36px;}
-  .hero__proof{margin-top:30px;}
+  .hero__sub{margin-top:12px;}
+  .hero__proof{margin-top:20px;}
+  .hero__cta{margin-top:16px;}
+  .hero__visual{margin-top:34px;}
   @media (min-width:900px){
     .hero{padding:72px 0 96px;}
     .hero__grid{grid-template-columns:1.05fr .95fr;column-gap:64px;align-items:center;}
-    .hero__copy{grid-column:1;grid-row:1;}
-    .hero__proof{grid-column:1;grid-row:2;align-self:start;}
-    .hero__visual{grid-column:2;grid-row:1 / span 2;margin-top:0;}
     .hero__sub{font-size:19px;}
-    .hero .cta-note{text-align:left;}
+    .hero__proof{max-width:560px;margin-top:26px;}
+    .hero__cta{margin-top:22px;}
+    .hero__cta .assure{justify-content:flex-start;}
+    .hero__visual{margin-top:0;}
   }
 
-  .mock{position:relative;width:100%;max-width:360px;margin:0 auto;aspect-ratio:10/9;}
+  .mock{position:relative;width:100%;max-width:320px;margin:0 auto;aspect-ratio:10/9;}
   .mock__card{
     position:absolute;width:64%;border-radius:14px;overflow:hidden;background:#fff;
     border:1px solid var(--line);
@@ -109,7 +118,7 @@
   .mock__card--front{right:0;bottom:3%;transform:rotate(4deg);}
   .mock__tag{
     position:absolute;z-index:2;white-space:nowrap;
-    font:600 14px/1 'Poppins',system-ui,sans-serif;padding:9px 13px;border-radius:999px;
+    font:600 14px/1 'Poppins','Poppins Fallback',system-ui,sans-serif;padding:9px 13px;border-radius:999px;
     box-shadow:0 10px 20px -8px rgba(43,43,43,.35);
   }
   .mock__tag--buy{top:0;right:4%;background:var(--green);color:#fff;}
@@ -117,111 +126,116 @@
   .mock__tag--skip{right:10%;bottom:-2%;background:var(--wine);color:#fff;}
   @media (min-width:900px){.mock{max-width:480px;}}
 
-  .proof-chip{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;}
-  .proof-chip svg{flex:0 0 26px;width:26px;height:26px;color:var(--wine);}
-  .proof-chip p{font-size:17px;line-height:1.45;font-weight:600;}
-  .proof-chip small{display:block;margin-top:4px;font-size:15px;font-weight:450;color:var(--ink-2);}
-  @media (min-width:900px){.hero__proof{max-width:520px;margin-top:36px;}}
+  /* Prova do hero: citação real em destaque, com a origem clara */
+  .proof-chip{
+    display:flex;gap:12px;align-items:flex-start;margin:0;
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--wine);
+    border-radius:14px;padding:14px 16px;
+  }
+  .proof-chip svg{flex:0 0 24px;width:24px;height:24px;color:var(--wine);margin-top:2px;}
+  .proof-chip p{font-size:18px;line-height:1.4;font-weight:650;}
+  .proof-chip small{display:block;margin-top:4px;font-size:15px;line-height:1.35;font-weight:450;color:var(--ink-2);}
+  @media (max-width:480px){.proof-chip svg{display:none;}}
 
   /* ---------- DÚVIDA ---------- */
-  .chat{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .chat{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
   .chat li{
-    max-width:86%;padding:12px 16px;border-radius:18px;border-bottom-left-radius:6px;
-    background:var(--bg);border:1px solid var(--line);font-size:17px;line-height:1.4;
+    max-width:84%;padding:10px 14px;border-radius:18px;border:1px solid var(--line);
+    font-size:17px;line-height:1.35;border-bottom-left-radius:6px;
   }
-  .chat li:nth-child(even){align-self:flex-end;background:var(--wine-50);border-color:#EDD9DE;border-bottom-left-radius:18px;border-bottom-right-radius:6px;}
-  .chat__who{display:block;font:600 15px/1.3 'Poppins',system-ui,sans-serif;color:var(--ink-2);margin-bottom:2px;}
-  .punch{margin-top:30px;font:600 23px/1.3 'Poppins',system-ui,sans-serif;}
-  .punch strong{display:block;font-weight:700;color:var(--wine);}
-  .doubts-label{margin-top:28px;font-size:16px;color:var(--ink-2);}
-  .doubts{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:8px;}
-  .doubts li{font-size:16px;line-height:1.35;padding:9px 14px;border-radius:999px;background:var(--sand);}
+  .chat li:nth-child(even){align-self:flex-end;border-bottom-left-radius:18px;border-bottom-right-radius:6px;}
+  .chat__who{display:block;font:600 15px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;color:var(--ink-2);margin-bottom:1px;}
+  .v-lista{background:var(--sand);border-color:#E3D7C7;}
+  .v-video{background:#EEF1F5;border-color:#DCE2EA;}
+  .v-amiga{background:var(--wine-50);border-color:#EDD9DE;}
+  .v-mae{background:var(--green-50);border-color:#D3E6D8;}
+  .v-grupo{background:#FBF3E2;border-color:#EEDFBE;}
+  .punch{
+    margin-top:24px;padding:22px 20px;border-radius:18px;
+    background:var(--wine-700);color:#fff;
+    font:600 23px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;
+  }
+  .punch strong{display:block;font-weight:700;color:#F6CFD8;}
+  @media (min-width:900px){.punch{font-size:30px;padding:30px 32px;}}
 
   /* ---------- LISTA × PLANO ---------- */
-  .versus{display:grid;gap:14px;margin-top:30px;}
+  .versus{display:grid;gap:14px;margin-top:28px;}
   .vs-card{border-radius:18px;padding:22px;}
   .vs-card--list{background:var(--sand);}
   .vs-card--plan{background:#fff;border:2px solid var(--green);box-shadow:var(--shadow);}
-  .vs-card__title{font:700 19px/1.25 'Poppins',system-ui,sans-serif;}
-  .vs-card__sub{margin-top:4px;font-size:16px;color:var(--ink-2);}
-  .vs-rows{list-style:none;margin:14px 0 0;padding:0;}
-  .vs-rows li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed #D5C8B9;font-size:17px;}
+  .vs-label{font:700 15px/1.2 'Poppins','Poppins Fallback',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);}
+  .vs-card--plan .vs-label{color:var(--green-700);}
+  .vs-key{margin-top:6px;font:700 22px/1.25 'Poppins','Poppins Fallback',system-ui,sans-serif;}
+  .vs-small{margin-top:14px;font-size:15px;color:var(--ink-2);}
+  .vs-rows{list-style:none;margin:6px 0 0;padding:0;}
+  .vs-rows li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed #D5C8B9;font-size:17px;}
+  .vs-rows li:last-child{border-bottom:0;}
   .vs-rows li span:last-child{font-weight:650;}
-  .factors{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;}
+  .factors{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px;}
   .factors li{display:flex;gap:10px;align-items:flex-start;font-size:16.5px;line-height:1.4;}
   .factors li::before{content:"";flex:0 0 22px;height:22px;margin-top:1px;border-radius:50%;background:var(--green-50) var(--check) center/12px no-repeat;}
-  .vs-foot{margin-top:16px;font-weight:650;font-size:16.5px;line-height:1.45;}
-  .vs-card--list .vs-foot{color:var(--ink-2);}
-  .vs-card--plan .vs-foot{color:var(--green-700);}
   @media (min-width:560px){.factors{grid-template-columns:1fr 1fr;column-gap:16px;}}
   @media (min-width:900px){.versus{grid-template-columns:.8fr 1.2fr;gap:20px;align-items:stretch;}}
 
   /* ---------- EXEMPLO ---------- */
-  .question{margin-top:22px;font:600 21px/1.3 'Poppins',system-ui,sans-serif;color:var(--wine);}
-  .moms{display:grid;gap:14px;margin-top:18px;}
-  .mom{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:20px;}
-  .mom__label{font:700 15px/1 'Poppins',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);}
-  .mom__facts{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px;}
-  .mom__facts li{font-size:15px;line-height:1.3;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;}
-  .mom__result{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);}
-  .mom__result p{font-size:15px;color:var(--ink-2);margin-bottom:8px;}
-  .mom__result ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;}
-  .mom__result li{display:flex;gap:10px;align-items:flex-start;font-weight:600;line-height:1.4;}
+  .question{margin-top:20px;font:600 21px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;color:var(--wine);}
+  .moms{display:grid;gap:12px;margin-top:16px;}
+  .mom{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:18px 20px;}
+  .mom__label{font:700 15px/1 'Poppins','Poppins Fallback',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);}
+  .mom__facts{margin-top:8px;font-size:16px;line-height:1.4;}
+  .mom__result{list-style:none;padding:12px 0 0;margin:12px 0 0;border-top:1px solid var(--line);display:grid;gap:6px;}
+  .mom__result li{display:flex;gap:10px;align-items:flex-start;font-weight:650;line-height:1.4;}
   .mom__result li::before{content:"";flex:0 0 8px;height:8px;margin-top:8px;border-radius:50%;background:var(--green);}
   @media (min-width:760px){.moms{grid-template-columns:1fr 1fr;}}
-  .demo-punch{margin-top:24px;font-size:18px;}
-  .shot{margin:24px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:14px;}
-  .shot img{margin:0 auto;border-radius:10px;width:100%;max-width:440px;}
-  .shot figcaption{margin-top:10px;font-size:15px;line-height:1.45;color:var(--ink-2);text-align:center;}
-  .decide{margin-top:34px;}
+  .demo-punch{margin-top:22px;font-size:18px;}
+  .shot{margin:20px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:12px;}
+  .shot img{margin:0 auto;border-radius:10px;width:100%;max-width:380px;}
+  .shot figcaption{margin-top:8px;font-size:15px;line-height:1.45;color:var(--ink-2);text-align:center;}
+  .decide{margin-top:28px;}
   .decide h3{font-size:19px;}
-  .decisions{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px;}
-  .decisions li{font:600 15px/1 'Poppins',system-ui,sans-serif;padding:11px 14px;border-radius:999px;}
+  .decisions{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px;}
+  .decisions li{font:600 15px/1 'Poppins','Poppins Fallback',system-ui,sans-serif;padding:11px 14px;border-radius:999px;}
   .d-buy{background:var(--green-50);color:var(--green-700);}
   .d-research{background:var(--sand);color:var(--ink);}
   .d-wait{background:var(--wine-50);color:var(--wine-700);}
   .d-used{background:#EEF0F4;color:var(--ink);}
   .d-skip{background:var(--ink);color:#fff;}
 
-  /* ---------- PROVA 1 ---------- */
-  .proof1{display:grid;gap:26px;}
-  .big-quote{font:700 clamp(25px,6.6vw,38px)/1.2 'Poppins',system-ui,sans-serif;}
-  .big-quote span{color:var(--wine);}
-  .quote-sub{margin-top:16px;font-size:18px;}
-  .quote-by{margin-top:12px;font-size:15px;color:var(--ink-2);}
-  .print{margin:0 auto;width:100%;max-width:320px;}
-  .print img{border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);}
-  @media (min-width:900px){
-    .proof1{grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;}
-    .proof1 .cta-note{text-align:left;}
-  }
+  /* ---------- PROVAS ---------- */
+  .pill{display:inline-block;font:600 14px/1 'Poppins','Poppins Fallback',system-ui,sans-serif;padding:8px 11px;border-radius:999px;}
+  .pill--wine{background:var(--wine-50);color:var(--wine-700);}
+  .pill--green{background:var(--green-50);color:var(--green-700);}
+  .proofs{display:grid;gap:14px;margin-top:26px;}
+  .proof{margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);}
+  .proof__text{margin-top:10px;font-weight:650;font-size:17px;line-height:1.45;}
+  .proof img{margin:14px auto 0;border-radius:12px;border:1px solid var(--line);}
+  .proof--tall img{max-width:280px;}
+  .proofs-note{margin-top:14px;font-size:15px;color:var(--ink-2);}
+  @media (min-width:760px){.proofs{grid-template-columns:1fr 1fr;align-items:start;}}
 
   /* ---------- HISTÓRIA ---------- */
-  .story{display:grid;gap:28px;}
-  .story__photo img{width:100%;max-width:260px;aspect-ratio:1/1;object-fit:cover;border-radius:22px;}
+  .story{display:grid;gap:24px;}
+  .story__photo img{width:100%;max-width:200px;aspect-ratio:1/1;object-fit:cover;border-radius:22px;}
   .story__text > * + *{margin-top:14px;}
-  .story__big{font:700 24px/1.25 'Poppins',system-ui,sans-serif;color:var(--wine);}
-  .story__items{list-style:none;padding:0;margin:0;display:grid;gap:6px;}
+  .story__big{font:700 24px/1.25 'Poppins','Poppins Fallback',system-ui,sans-serif;color:var(--wine);}
+  .story__items{list-style:none;padding:0;display:grid;gap:4px;}
   .story__items li{position:relative;padding-left:20px;color:var(--ink-2);}
   .story__items li::before{content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--wine);}
-  .signature{font:600 16px/1.3 'Poppins',system-ui,sans-serif;}
+  .signature{font:600 16px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;}
   @media (min-width:900px){
     .story{grid-template-columns:.75fr 1.25fr;gap:64px;align-items:start;}
     .story__photo img{max-width:100%;}
   }
 
   /* ---------- O PLANO ---------- */
-  .guide{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);}
-  .pill{display:inline-block;font:600 14px/1 'Poppins',system-ui,sans-serif;padding:8px 11px;border-radius:999px;}
-  .pill--wine{background:var(--wine-50);color:var(--wine-700);}
-  .pill--green{background:var(--green-50);color:var(--green-700);}
+  .guide{margin-top:28px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);}
   .guide h3{margin-top:12px;font-size:21px;}
   .for{margin-top:8px;}
-  .checks{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px;}
+  .checks{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px;}
   .checks li{display:flex;gap:10px;align-items:flex-start;line-height:1.45;}
   .checks li::before{content:"";flex:0 0 22px;height:22px;margin-top:1px;border-radius:50%;background:var(--green-50) var(--check) center/12px no-repeat;}
-  .items-label{margin-top:34px;}
-  .items{display:grid;gap:12px;margin-top:4px;}
+  .items-label{margin-top:30px;}
+  .items{display:grid;gap:10px;margin-top:4px;}
   .item{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;}
   .item__img{flex:0 0 96px;width:96px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);}
   .item__img img{width:100%;}
@@ -233,45 +247,31 @@
   }
 
   /* ---------- SERVE PRA VOCÊ ---------- */
-  .fit{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px;}
-  .fit li{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:18px 20px;}
-  .fit strong{display:block;font:600 17px/1.3 'Poppins',system-ui,sans-serif;margin-bottom:6px;}
+  .fit{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px;}
+  .fit li{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:16px 18px;}
+  .fit strong{display:block;font:600 17px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;margin-bottom:4px;}
   .fit span{font-size:16.5px;line-height:1.5;}
   @media (min-width:760px){.fit{grid-template-columns:1fr 1fr;}}
 
-  /* ---------- PROVAS ---------- */
-  .proofs{display:grid;gap:14px;margin-top:28px;}
-  .proof{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);}
-  .proof__text{margin-top:10px;font-weight:600;font-size:17px;line-height:1.45;}
-  .proof img{margin:14px auto 0;border-radius:12px;border:1px solid var(--line);}
-  .proof--tall img{max-width:280px;}
-  .proofs-note{margin-top:14px;font-size:15px;color:var(--ink-2);}
-  @media (min-width:900px){.proofs{grid-template-columns:repeat(3,1fr);align-items:start;}}
-
-  /* ---------- ANTES × DEPOIS ---------- */
-  .ba{display:grid;gap:14px;margin-top:28px;}
-  .ba__col{border-radius:20px;padding:22px;}
-  .ba__col--before{background:var(--sand);}
-  .ba__col--after{background:var(--green-50);}
-  .ba__title{font:700 15px/1 'Poppins',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
-  .ba__col--before .ba__title{color:var(--ink-2);}
-  .ba__col--after .ba__title{color:var(--green-700);}
-  .ba ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
-  .ba__col--before li{color:var(--ink-2);line-height:1.45;}
-  .ba__col--after li{display:flex;gap:10px;align-items:flex-start;font-weight:600;line-height:1.45;}
-  .ba__col--after li::before{content:"";flex:0 0 22px;height:22px;margin-top:1px;border-radius:50%;background:#fff var(--check) center/12px no-repeat;}
-  @media (min-width:760px){.ba{grid-template-columns:1fr 1fr;}}
+  /* ---------- DO SERÁ QUE PRO EU SEI ---------- */
+  .shift{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px;}
+  .shift li{display:grid;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:16px 18px;}
+  .shift__from{font-size:16px;line-height:1.4;color:var(--ink-2);text-decoration:line-through;text-decoration-color:rgba(142,42,66,.55);text-decoration-thickness:2px;}
+  .shift__to{display:flex;gap:10px;align-items:flex-start;font:600 19px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;color:var(--green-700);}
+  .shift__to::before{content:"";flex:0 0 24px;height:24px;margin-top:0;border-radius:50%;background:var(--green-50) var(--check) center/13px no-repeat;}
+  @media (min-width:760px){
+    .shift li{grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding:20px 24px;}
+  }
 
   /* ---------- PREÇO ---------- */
   .section--price{background:var(--wine-700);color:#fff;}
   .section--price .kicker{color:#F3C9D3;}
   .section--price h2{color:#fff;}
   .price-intro{margin-top:14px;font-size:18px;color:#F6E3E8;}
-  .price-card{margin:32px auto 0;max-width:520px;background:#fff;color:var(--ink);border-radius:24px;padding:26px 22px;box-shadow:0 34px 70px -24px rgba(0,0,0,.5);}
-  .price-card__name{font:700 21px/1.25 'Poppins',system-ui,sans-serif;}
-  .price-card__sub{margin-top:4px;font-size:16px;color:var(--ink-2);}
+  .price-card{margin:30px auto 0;max-width:520px;background:#fff;color:var(--ink);border-radius:24px;padding:26px 22px;box-shadow:0 34px 70px -24px rgba(0,0,0,.5);}
+  .price-card__name{font:700 21px/1.25 'Poppins','Poppins Fallback',system-ui,sans-serif;}
   .price{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);text-align:center;}
-  .price__value{font:700 54px/1 'Poppins',system-ui,sans-serif;letter-spacing:-.02em;}
+  .price__value{font:700 54px/1 'Poppins','Poppins Fallback',system-ui,sans-serif;letter-spacing:-.02em;}
   .price__value small{font-size:26px;vertical-align:.7em;margin-right:4px;letter-spacing:0;}
   .price__note{margin-top:8px;font-size:16px;color:var(--ink-2);}
   .price-card .cta{margin-top:20px;display:flex;width:100%;}
@@ -281,23 +281,22 @@
   }
   .guarantee{margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:var(--bg);border-radius:16px;padding:16px;}
   .guarantee svg{flex:0 0 34px;width:34px;height:34px;color:var(--wine);}
-  .guarantee strong{display:block;font:600 17px/1.3 'Poppins',system-ui,sans-serif;}
+  .guarantee strong{display:block;font:600 17px/1.3 'Poppins','Poppins Fallback',system-ui,sans-serif;}
   .guarantee span{display:block;margin-top:2px;font-size:16px;line-height:1.45;}
 
   /* ---------- FAQ ---------- */
-  .faq{margin-top:24px;border-top:1px solid var(--line);}
+  .faq{margin-top:22px;border-top:1px solid var(--line);}
   .faq details{border-bottom:1px solid var(--line);}
   .faq summary{
     list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
-    padding:18px 0;font:600 17px/1.35 'Poppins',system-ui,sans-serif;
+    padding:17px 0;font:600 17px/1.35 'Poppins','Poppins Fallback',system-ui,sans-serif;
   }
   .faq summary::-webkit-details-marker{display:none;}
   .faq summary::after{content:"";flex:0 0 10px;height:10px;margin-right:4px;border-right:2px solid var(--wine);border-bottom:2px solid var(--wine);transform:rotate(45deg) translateY(-3px);transition:transform .2s ease;}
   .faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px);}
-  .faq details p{padding:0 0 20px;}
+  .faq details p{padding:0 0 18px;}
 
   /* ---------- FINAL ---------- */
-  .final p{margin-top:14px;}
   .footer{padding:30px 0 120px;font-size:15px;color:var(--ink-2);text-align:center;border-top:1px solid var(--line);}
   @media (min-width:900px){.footer{padding-bottom:36px;}}
 
@@ -313,7 +312,7 @@
   }
   .sticky.is-on{transform:none;visibility:visible;transition:transform .25s ease,visibility 0s;}
   .sticky__txt{flex:1 1 auto;min-width:0;line-height:1.25;}
-  .sticky__txt strong{display:block;font:600 15px/1.25 'Poppins',system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sticky__txt strong{display:block;font:600 15px/1.25 'Poppins','Poppins Fallback',system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .sticky__txt span{font-size:15px;color:var(--ink-2);white-space:nowrap;}
   .sticky .cta{flex:0 0 auto;width:auto;min-height:48px;padding:12px 16px;font-size:15px;border-radius:12px;box-shadow:none;}
   @media (min-width:900px){.sticky{display:none;}}
@@ -330,16 +329,30 @@
 </head>
 <body>
 
-<!-- 1. HERO -->
+<!-- 1. HERO: promessa → explicação → prova → ação -->
 <header class="hero">
   <div class="wrap wrap--wide hero__grid">
     <div class="hero__copy">
-      <p class="hero__eyebrow">Já comprou bastante e ainda sente que falta alguma coisa?</p>
+      <p class="hero__eyebrow">Montando o enxoval e sem saber se está comprando certo?</p>
       <h1>Saiba o que <mark>ainda falta</mark> no enxoval do seu bebê. E o que você já pode parar de comprar.</h1>
-      <p class="hero__sub">Um plano simples que mostra o que comprar, quanto comprar e quando comprar, de acordo com o mês em que seu bebê nasce, o clima da sua cidade e a sua rotina.</p>
+      <p class="hero__sub">Um plano simples que mostra o que comprar, quanto e quando, de acordo com o mês do nascimento, o clima da sua cidade e a sua rotina.</p>
+
+      <figure class="proof-chip hero__proof">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 6 4 8.6 4 12v6h6v-6H7c0-1.9 1.1-3 2.5-3V6zm10 0c-3 0-5.5 2.6-5.5 6v6h6v-6h-3c0-1.9 1.1-3 2.5-3V6z"/></svg>
+        <figcaption>
+          <p>“Organizei tudo com suas dicas e economizei quase R$1.500.”</p>
+          <small>Relato de uma mãe que usou o método</small>
+        </figcaption>
+      </figure>
+
       <div class="hero__cta">
-        <a class="cta" data-cta="hero" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p class="cta-note">R$29,90 · pagamento único · acesso imediato · 7 dias de garantia</p>
+        <a class="cta" data-cta="cta_hero" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="assure">
+          <li><strong>R$29,90</strong></li>
+          <li>Pagamento único</li>
+          <li>Acesso imediato</li>
+          <li>7 dias de garantia</li>
+        </ul>
       </div>
     </div>
 
@@ -349,20 +362,13 @@
           <img src="imgs/mockuptabela.webp" alt="Recorte real da Tabela de Quantidades, com quantas peças de cada tamanho comprar" width="570" height="560" decoding="async">
         </div>
         <div class="mock__card mock__card--front">
-          <img src="imgs/mockupcronograma.webp" alt="Recorte real do Cronograma Semana a Semana, da 12ª à 40ª semana" width="570" height="556" fetchpriority="high" decoding="async">
+          <img src="imgs/mockupcronograma.webp" alt="Recorte real do Cronograma Semana a Semana, da 12ª à 40ª semana" width="570" height="556" decoding="async">
         </div>
         <span class="mock__tag mock__tag--buy" aria-hidden="true">Compre agora</span>
         <span class="mock__tag mock__tag--wait" aria-hidden="true">Espere o bebê nascer</span>
         <span class="mock__tag mock__tag--skip" aria-hidden="true">Não compre</span>
       </div>
     </div>
-
-    <figure class="hero__proof proof-chip" style="margin-left:0;margin-right:0;margin-bottom:0;">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 6 4 8.6 4 12v6h6v-6H7c0-1.9 1.1-3 2.5-3V6zm10 0c-3 0-5.5 2.6-5.5 6v6h6v-6h-3c0-1.9 1.1-3 2.5-3V6z"/></svg>
-      <figcaption>
-        <p>“Organizei tudo com suas dicas e economizei quase R$1.500.”<small>Mensagem real de uma mãe que usou o método</small></p>
-      </figcaption>
-    </figure>
   </div>
 </header>
 
@@ -376,20 +382,13 @@
         <h2 id="t-duvida">Quanto mais você pesquisa, mais coisa aparece pra comprar.</h2>
       </div>
       <ul class="chat">
-        <li><span class="chat__who">Uma lista salva</span>6 bodies RN.</li>
-        <li><span class="chat__who">Um vídeo</span>Uns 12 bodies, no mínimo.</li>
-        <li><span class="chat__who">Uma amiga</span>Eu usei só 4.</li>
-        <li><span class="chat__who">Sua mãe</span>RN nem precisa. Ele cresce rápido.</li>
-        <li><span class="chat__who">O grupo de mães</span>Compra RN, sim. Muito!</li>
+        <li class="v-lista"><span class="chat__who">Uma lista salva</span>6 bodies RN.</li>
+        <li class="v-video"><span class="chat__who">Um vídeo</span>Uns 12 bodies, no mínimo.</li>
+        <li class="v-amiga"><span class="chat__who">Uma amiga</span>Eu usei só 4.</li>
+        <li class="v-mae"><span class="chat__who">Sua mãe</span>RN nem precisa. Ele cresce rápido.</li>
+        <li class="v-grupo"><span class="chat__who">O grupo de mães</span>Compra RN, sim. Muito!</li>
       </ul>
       <p class="punch">No fim, você tem mais informação.<strong>E menos certeza.</strong></p>
-      <p class="doubts-label">E as dúvidas continuam:</p>
-      <ul class="doubts">
-        <li>Será que está faltando alguma coisa?</li>
-        <li>Será que comprei demais?</li>
-        <li>Esse tamanho vai servir?</li>
-        <li>Compro agora ou posso esperar?</li>
-      </ul>
     </div>
   </section>
 
@@ -399,23 +398,23 @@
       <div class="head" style="max-width:680px;">
         <p class="kicker">O problema não é você</p>
         <h2 id="t-lista">Uma lista diz o que comprar. Mas ela não sabe nada sobre o seu bebê.</h2>
-        <p class="lead">Ela dá o mesmo número pra mãe do Sul e pra mãe do Nordeste. Pro bebê que nasce no inverno e pro que nasce no verão.</p>
+        <p class="lead">Ela dá o mesmo número pra mãe do Sul e pra mãe do Nordeste.</p>
       </div>
       <div class="versus">
         <div class="vs-card vs-card--list">
-          <p class="vs-card__title">Lista comum</p>
-          <p class="vs-card__sub">Diz o que comprar:</p>
+          <p class="vs-label">Lista comum</p>
+          <p class="vs-key">O mesmo número pra todo mundo.</p>
           <ul class="vs-rows">
             <li><span>Bodies</span><span>6</span></li>
             <li><span>Mantas</span><span>4</span></li>
             <li><span>Macacões</span><span>6</span></li>
             <li><span>Fraldas RN</span><span>vários pacotes</span></li>
           </ul>
-          <p class="vs-foot">O mesmo número pra todo mundo.</p>
         </div>
         <div class="vs-card vs-card--plan">
-          <p class="vs-card__title">Enxoval Sem Desperdício</p>
-          <p class="vs-card__sub">Antes de dizer quanto, olha pra:</p>
+          <p class="vs-label">Enxoval Sem Desperdício</p>
+          <p class="vs-key">O número que faz sentido pra sua casa.</p>
+          <p class="vs-small">Antes de dizer quanto, considera:</p>
           <ul class="factors">
             <li>O mês em que o bebê nasce</li>
             <li>O clima da sua cidade</li>
@@ -424,13 +423,12 @@
             <li>O que você já comprou</li>
             <li>O que pode esperar o bebê nascer</li>
           </ul>
-          <p class="vs-foot">Assim você chega no número que faz sentido pra sua casa.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. NA PRÁTICA -->
+  <!-- 4. NA PRÁTICA + CTA do "ah, entendi" -->
   <section class="section section--paper" aria-labelledby="t-exemplo">
     <div class="wrap wrap--wide">
       <div class="head" style="max-width:680px;">
@@ -441,37 +439,23 @@
       <div class="moms">
         <div class="mom">
           <p class="mom__label">Mãe A</p>
-          <ul class="mom__facts">
-            <li>Bebê nasce no inverno</li>
-            <li>Cidade fria</li>
-            <li>Lava roupa 2 vezes por semana</li>
+          <p class="mom__facts">Bebê nasce no inverno · cidade fria · lava roupa 2 vezes por semana</p>
+          <ul class="mom__result">
+            <li>Mais manga longa e macacão</li>
+            <li>Mais peças, porque lava menos vezes</li>
           </ul>
-          <div class="mom__result">
-            <p>O que muda pra ela:</p>
-            <ul>
-              <li>Mais manga longa e macacão</li>
-              <li>Mais peças, porque lava menos vezes</li>
-            </ul>
-          </div>
         </div>
         <div class="mom">
           <p class="mom__label">Mãe B</p>
-          <ul class="mom__facts">
-            <li>Bebê nasce no verão</li>
-            <li>Cidade quente</li>
-            <li>Lava roupa 4 vezes por semana</li>
+          <p class="mom__facts">Bebê nasce no verão · cidade quente · lava roupa 4 vezes por semana</p>
+          <ul class="mom__result">
+            <li>Mais manga curta</li>
+            <li>Menos peças, porque lava mais vezes</li>
           </ul>
-          <div class="mom__result">
-            <p>O que muda pra ela:</p>
-            <ul>
-              <li>Mais manga curta</li>
-              <li>Menos peças, porque lava mais vezes</li>
-            </ul>
-          </div>
         </div>
       </div>
       <div style="max-width:680px;">
-        <p class="demo-punch">Uma lista pronta daria a mesma resposta pras duas. <strong>A Tabela de Quantidades cruza essas informações e mostra o número de cada uma.</strong></p>
+        <p class="demo-punch">Uma lista pronta daria a mesma resposta pras duas. <strong>A Tabela de Quantidades mostra o número de cada uma.</strong></p>
         <figure class="shot">
           <img src="imgs/mockuptabela.webp" alt="Recorte real da Tabela de Quantidades por clima e mês de nascimento, com opções para frio, calor e ameno" width="570" height="560" loading="lazy" decoding="async">
           <figcaption>Recorte real da Tabela de Quantidades: os números mudam entre frio, calor e ameno.</figcaption>
@@ -486,28 +470,38 @@
             <li class="d-skip">Não compre</li>
           </ul>
         </div>
+        <div class="cta-block cta-block--left">
+          <a class="cta" data-cta="cta_mecanismo" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO O PLANO PRO MEU BEBÊ<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul class="assure">
+            <li><strong>R$29,90</strong></li>
+            <li>Pagamento único</li>
+            <li>7 dias de garantia</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. PRIMEIRA PROVA -->
-  <section class="section" aria-labelledby="t-prova">
+  <!-- 5. PROVAS PERTO DA DEMONSTRAÇÃO -->
+  <section class="section" aria-labelledby="t-provas">
     <div class="wrap wrap--wide">
-      <div class="proof1">
-        <div>
-          <p class="kicker">Quem usou, conta</p>
-          <p class="big-quote" id="t-prova">“Organizei tudo com suas dicas e <span>economizei quase R$1.500.</span>”</p>
-          <p class="quote-sub">“Nunca imaginei que dava para montar um enxoval completo gastando tão pouco e sem deixar faltar nada.”</p>
-          <p class="quote-by">Mensagem real enviada pra Marina</p>
-          <div class="cta-block">
-            <a class="cta" data-cta="prova" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MONTAR O MEU SEM CHUTE<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <p class="cta-note">R$29,90 · pagamento único · acesso imediato</p>
-          </div>
-        </div>
-        <figure class="print" style="margin-bottom:0;">
-          <img src="imgs/depoimento-principal.webp" alt="Print de mensagem: mãe conta que terminou de montar o enxoval, organizou tudo com as dicas e economizou quase R$1.500" width="640" height="975" loading="lazy" decoding="async">
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">Quem usou, conta</p>
+        <h2 id="t-provas">Quem parou de montar o enxoval no escuro.</h2>
+      </div>
+      <div class="proofs">
+        <figure class="proof proof--tall">
+          <span class="pill pill--green">Começou em cima da hora</span>
+          <figcaption class="proof__text">Comparou com as listas prontas e com o que todo mundo falava: ia gastar uns R$1.700 a mais.</figcaption>
+          <img src="imgs/depo-novo.webp" alt="Print de mensagem: mãe conta que conseguiu montar o enxoval em cima da hora e que, seguindo listas prontas, gastaria uns 1700 reais a mais" width="640" height="960" loading="lazy" decoding="async">
+        </figure>
+        <figure class="proof">
+          <span class="pill pill--green">Segurança pra decidir</span>
+          <figcaption class="proof__text">“Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha.”</figcaption>
+          <img src="imgs/instagram-2.webp" alt="Print de resposta no Instagram: Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha" width="700" height="312" loading="lazy" decoding="async">
         </figure>
       </div>
+      <p class="proofs-note">Prints reais de mensagens enviadas pra Marina.</p>
     </div>
   </section>
 
@@ -521,17 +515,15 @@
         <div class="story__text">
           <p class="kicker" style="margin-bottom:0;">Quem criou</p>
           <h2 id="t-marina">Eu fiz o que quase toda mãe faz.</h2>
-          <p>Na primeira gravidez, peguei uma lista de enxoval da internet. Tinha mais de 180 itens. Comprei quase tudo.</p>
-          <p>Uns quatro meses depois do nascimento, fui arrumar o quarto e fiz a conta do que estava parado:</p>
+          <p>Na primeira gravidez, segui uma lista de enxoval com mais de 180 itens. Comprei quase tudo.</p>
+          <p>Meses depois do nascimento, fiz a conta do que estava parado:</p>
           <p class="story__big">R$1.680 em coisas que quase não usamos.</p>
           <ul class="story__items">
             <li>A saída de maternidade, usada uma vez.</li>
             <li>O kit berço, que tive que tirar por segurança.</li>
-            <li>O canguru, que ele odiou.</li>
             <li>Os sapatinhos, que nunca serviram.</li>
           </ul>
-          <p>Aí comecei a perguntar pra toda mãe que eu conhecia: o que você comprou e não usou? Anotei tudo numa planilha.</p>
-          <p>No segundo filho, comprei metade. <strong>E não faltou nada.</strong></p>
+          <p>Comecei a perguntar pra outras mães o que elas compraram e não usaram, e anotei tudo numa planilha. No segundo filho, comprei metade. <strong>E não faltou nada.</strong></p>
           <p>Esse jeito de decidir virou o Enxoval Sem Desperdício.</p>
           <p class="signature">Marina, mãe de dois</p>
         </div>
@@ -555,7 +547,6 @@
         <ul class="checks">
           <li>As 12 coisas que quase toda mãe compra, guarda e nunca usa</li>
           <li>Onde dá pra economizar e onde não vale a pena</li>
-          <li>Quantos bodies de RN, P e M, com o motivo de cada número</li>
           <li>Uma trilha pra quem já está de 28, 30 ou 34 semanas</li>
           <li>O que fazer se o bebê te surpreender: se golfa muito, se não aceita chupeta, se nasce grande</li>
         </ul>
@@ -617,67 +608,50 @@
         <li><strong>Vai ganhar muita coisa no chá</strong><span>Você monta a lista do chá pra receber o que falta, e não mais do mesmo.</span></li>
       </ul>
       <div class="cta-block cta-block--center" style="max-width:680px;">
-        <a class="cta" data-cta="serve-pra-voce" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO DE ENXOVAL<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p class="cta-note">R$29,90 · pagamento único · 7 dias de garantia</p>
+        <a class="cta" data-cta="cta_para_quem" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO DE ENXOVAL<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="assure">
+          <li><strong>R$29,90</strong></li>
+          <li>Pagamento único</li>
+          <li>7 dias de garantia</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- 9. MAIS PROVAS -->
-  <section class="section" aria-labelledby="t-provas">
+  <!-- 9. A MENSAGEM DO COMEÇO, NA ÍNTEGRA -->
+  <section class="section" aria-labelledby="t-integra">
     <div class="wrap wrap--wide">
       <div class="head" style="max-width:680px;">
-        <p class="kicker">Mais mães</p>
-        <h2 id="t-provas">Quem parou de montar o enxoval no escuro.</h2>
+        <p class="kicker">Na íntegra</p>
+        <h2 id="t-integra">A mensagem lá do começo, completa.</h2>
       </div>
       <div class="proofs">
-        <figure class="proof proof--tall" style="margin:0;">
-          <span class="pill pill--green">Começou em cima da hora</span>
-          <figcaption class="proof__text">Comparou com as listas prontas e com o que todo mundo falava: ia gastar uns R$1.700 a mais.</figcaption>
-          <img src="imgs/depo-novo.webp" alt="Print de mensagem: mãe conta que conseguiu montar o enxoval em cima da hora e que, seguindo listas prontas, gastaria uns 1700 reais a mais" width="640" height="960" loading="lazy" decoding="async">
+        <figure class="proof proof--tall">
+          <span class="pill pill--green">Economizou quase R$1.500</span>
+          <figcaption class="proof__text">“Nunca imaginei que dava para montar um enxoval completo gastando tão pouco e sem deixar faltar nada.”</figcaption>
+          <img src="imgs/depoimento-principal.webp" alt="Print de mensagem: mãe conta que terminou de montar o enxoval, organizou tudo com as dicas e economizou quase R$1.500" width="640" height="975" loading="lazy" decoding="async">
         </figure>
-        <figure class="proof" style="margin:0;">
-          <span class="pill pill--green">Segurança pra decidir</span>
-          <figcaption class="proof__text">“Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha.”</figcaption>
-          <img src="imgs/instagram-2.webp" alt="Print de resposta no Instagram: Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha" width="700" height="312" loading="lazy" decoding="async">
-        </figure>
-        <figure class="proof" style="margin:0;">
+        <figure class="proof">
           <span class="pill pill--green">Tudo pronto antes do bebê</span>
           <figcaption class="proof__text">Montando o enxoval com calma, antes do nascimento.</figcaption>
           <img src="imgs/instagram-3.webp" alt="Print de resposta no Instagram: mãe conta que amou o guia, que o bebê nasce em janeiro e que está terminando de montar o enxoval" width="700" height="291" loading="lazy" decoding="async">
         </figure>
       </div>
-      <p class="proofs-note">Prints reais de mensagens enviadas pra Marina.</p>
     </div>
   </section>
 
-  <!-- 10. ANTES × DEPOIS -->
+  <!-- 10. DO SERÁ QUE PRO EU SEI -->
   <section class="section section--paper" aria-labelledby="t-muda">
-    <div class="wrap wrap--wide">
-      <div class="head" style="max-width:680px;">
+    <div class="wrap">
+      <div class="head">
         <p class="kicker">O que muda</p>
         <h2 id="t-muda">Do “será que…” pro “eu sei”.</h2>
       </div>
-      <div class="ba">
-        <div class="ba__col ba__col--before">
-          <p class="ba__title">Antes</p>
-          <ul>
-            <li>“Será que está faltando alguma coisa?”</li>
-            <li>“Será que comprei demais?”</li>
-            <li>“Esse tamanho vai servir?”</li>
-            <li>“Compro agora ou espero?”</li>
-          </ul>
-        </div>
-        <div class="ba__col ba__col--after">
-          <p class="ba__title">Com o plano</p>
-          <ul>
-            <li>Eu sei o que ainda falta.</li>
-            <li>Eu sei o que posso parar de comprar.</li>
-            <li>Eu sei quantas peças de cada tamanho.</li>
-            <li>Eu sei o que resolver agora e o que pode esperar.</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="shift">
+        <li><span class="shift__from">“Será que falta alguma coisa?”</span><span class="shift__to">Eu sei o que ainda falta.</span></li>
+        <li><span class="shift__from">“Será que comprei demais?”</span><span class="shift__to">Eu sei o que posso parar de comprar.</span></li>
+        <li><span class="shift__from">“Compro agora ou espero?”</span><span class="shift__to">Eu sei o que resolver agora.</span></li>
+      </ul>
     </div>
   </section>
 
@@ -688,11 +662,10 @@
         <p class="kicker">Quanto custa</p>
         <h2 id="t-preco">Um macacão que não serve. Uma manta repetida. Um pacote de fralda RN que sobra.</h2>
       </div>
-      <p class="price-intro">Qualquer um desses já custa perto do valor do plano inteiro.</p>
+      <p class="price-intro">Uma única compra dessas já pode custar boa parte do valor do plano.</p>
 
       <div class="price-card" data-hide-sticky>
         <p class="price-card__name">Enxoval Sem Desperdício</p>
-        <p class="price-card__sub">Seu plano completo pro enxoval</p>
         <ul class="checks">
           <li>Guia Completo: Enxoval Sem Desperdício 3.0</li>
           <li>Cronograma Semana a Semana</li>
@@ -705,7 +678,7 @@
           <p class="price__value"><small>R$</small>29,90</p>
           <p class="price__note">Pagamento único. Sem mensalidade.</p>
         </div>
-        <a class="cta" data-cta="preco" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO POR R$29,90<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="cta" data-cta="cta_preco" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO POR R$29,90<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <p class="cta-note">Acesso imediato no seu e-mail · abre no celular</p>
         <div class="guarantee">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.6-7 10-4-1.4-7-5.4-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -722,44 +695,44 @@
       <div class="faq">
         <details open>
           <summary>Isso é só mais uma lista de enxoval?</summary>
-          <p>Não. Uma lista diz o que comprar. Aqui você vê quanto comprar de cada item e quando comprar, levando em conta o mês do nascimento, o clima da sua cidade e quantas vezes você lava roupa.</p>
+          <p>Não. Além do que comprar, você vê quanto e quando comprar, de acordo com o mês do nascimento, o clima e a sua rotina.</p>
         </details>
         <details>
           <summary>Já comprei várias coisas. Ainda vale a pena?</summary>
-          <p>Vale. Você confere o que já tem, vê o que ainda falta e descobre o que pode parar de comprar. A planilha ajuda a marcar o que já foi comprado.</p>
+          <p>Vale. Você confere o que já tem, vê o que ainda falta e o que pode parar de comprar.</p>
         </details>
         <details>
           <summary>Estou com a gestação bem avançada. Dá tempo?</summary>
-          <p>Dá. O guia tem uma trilha pra quem está em cima da hora, com a ordem do que resolver primeiro.</p>
+          <p>Dá. O guia tem uma trilha pra quem está em cima da hora.</p>
         </details>
         <details>
           <summary>Como eu recebo?</summary>
-          <p>Logo depois que o pagamento é aprovado, você recebe os dados de acesso no e-mail usado na compra.</p>
+          <p>Assim que o pagamento é aprovado, os dados de acesso chegam no e-mail usado na compra.</p>
         </details>
         <details>
           <summary>Consigo abrir no celular?</summary>
-          <p>Sim. Você abre e consulta tudo direto do celular.</p>
-        </details>
-        <details>
-          <summary>O pagamento é único?</summary>
-          <p>Sim. Você paga R$29,90 uma vez. Não é assinatura nem mensalidade.</p>
+          <p>Sim. Você abre e consulta tudo pelo celular.</p>
         </details>
         <details>
           <summary>E se eu não gostar?</summary>
-          <p>Você tem 7 dias pra pedir o reembolso.</p>
+          <p>Você tem 7 dias pra pedir o reembolso. O pagamento é único, sem mensalidade.</p>
         </details>
       </div>
     </div>
   </section>
 
   <!-- 13. CTA FINAL -->
-  <section class="section section--paper final" aria-labelledby="t-final" data-hide-sticky>
+  <section class="section section--paper" aria-labelledby="t-final" data-hide-sticky>
     <div class="wrap">
       <h2 id="t-final">Você pode continuar juntando listas. Ou pode saber o que ainda falta.</h2>
-      <p class="lead">Por R$29,90, você para de adivinhar e começa a decidir.</p>
-      <div class="cta-block">
-        <a class="cta" data-cta="final" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <p class="cta-note">Pagamento único · acesso imediato · 7 dias de garantia</p>
+      <div class="cta-block cta-block--left">
+        <a class="cta" data-cta="cta_final" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="assure">
+          <li><strong>R$29,90</strong></li>
+          <li>Pagamento único</li>
+          <li>Acesso imediato</li>
+          <li>7 dias de garantia</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -772,22 +745,24 @@
 
 <div class="sticky" id="sticky">
   <p class="sticky__txt"><strong>Enxoval Sem Desperdício</strong><span>R$29,90 · pagamento único</span></p>
-  <a class="cta" data-cta="sticky" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO</a>
+  <a class="cta" data-cta="cta_sticky" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO</a>
 </div>
 
 <script>
 (function(){
-  // Barra fixa: aparece depois do hero e some quando o card de preço ou o CTA final está na tela.
+  // Barra fixa: aparece quando o botão do hero sai da tela (depois do primeiro
+  // scroll relevante) e some sobre o card de preço e o CTA final.
   var sticky = document.getElementById('sticky');
-  var hero = document.querySelector('.hero');
+  var heroCta = document.querySelector('.hero__cta');
   var stops = Array.prototype.slice.call(document.querySelectorAll('[data-hide-sticky]'));
-  if (sticky && hero && 'IntersectionObserver' in window) {
-    var heroGone = false, visibleStops = 0;
-    var update = function(){ sticky.classList.toggle('is-on', heroGone && visibleStops === 0); };
+  if (sticky && heroCta && 'IntersectionObserver' in window) {
+    var passedHeroCta = false, visibleStops = 0;
+    var update = function(){ sticky.classList.toggle('is-on', passedHeroCta && visibleStops === 0); };
     new IntersectionObserver(function(entries){
-      heroGone = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      var e = entries[0];
+      passedHeroCta = !e.isIntersecting && e.boundingClientRect.top < 0;
       update();
-    }).observe(hero);
+    }).observe(heroCta);
     var stopObs = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ e.target.__inView = e.isIntersecting; });
       visibleStops = stops.filter(function(s){ return s.__inView; }).length;
@@ -796,8 +771,8 @@
     stops.forEach(function(s){ stopObs.observe(s); });
   }
 
-  // CTA_CLICK: mede qual chamada leva mais gente pro checkout.
-  // O InitiateCheckout continua sendo disparado pela UTMify.
+  // CTA_CLICK com a posição do botão (cta_hero, cta_mecanismo, cta_para_quem,
+  // cta_preco, cta_final, cta_sticky). O InitiateCheckout continua com a UTMify.
   document.addEventListener('click', function(ev){
     var el = ev.target && ev.target.closest ? ev.target.closest('[data-cta]') : null;
     if (!el) return;
