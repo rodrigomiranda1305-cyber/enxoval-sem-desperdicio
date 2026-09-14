@@ -2,403 +2,325 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Enxoval Sem Desperdício: dá tempo de montar tudo, na ordem certa</title>
-<meta name="description" content="O guia que mostra o que comprar, quanto e em que ordem, semana a semana. Chegue no parto com tudo pronto, sem desperdiçar R$1.500. Por R$29,90.">
-<link rel="preload" as="font" href="fonts/inter-var.woff2" type="font/woff2" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enxoval Sem Desperdício: saiba o que ainda falta no enxoval do seu bebê</title>
+<meta name="description" content="O plano que mostra o que comprar, quanto comprar e quando comprar pro seu bebê, de acordo com o mês do nascimento, o clima da sua cidade e a sua rotina. Pagamento único de R$29,90.">
+<meta name="theme-color" content="#FAF6F1">
 <link rel="preload" as="font" href="fonts/poppins-700.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="fonts/inter-var.woff2" type="font/woff2" crossorigin>
 <style>
-  @font-face{
-    font-family:'Poppins';
-    font-style:normal;
-    font-weight:700;
-    font-display:swap;
-    src:url('fonts/poppins-700.woff2') format('woff2');
-  }
-  @font-face{
-    font-family:'Poppins';
-    font-style:normal;
-    font-weight:600;
-    font-display:swap;
-    src:url('fonts/poppins-600.woff2') format('woff2');
-  }
-  /* Inter variável: eixo wght 400 a 700, evita negrito sintético */
-  @font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:400 700;
-    font-display:swap;
-    src:url('fonts/inter-var.woff2') format('woff2');
-  }
+  @font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/poppins-700.woff2') format('woff2');}
+  @font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/poppins-600.woff2') format('woff2');}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url('fonts/inter-var.woff2') format('woff2');}
+
   :root{
-    --cream:#FAF6F1;
-    --white:#FFFFFF;
+    --bg:#FAF6F1;
+    --paper:#FFFFFF;
+    --sand:#F2EBE2;
+    --ink:#2B2B2B;
+    --ink-2:#57514C;
     --wine:#8E2A42;
-    --wine-dark:#6E2033;
-    --graphite:#2B2B2B;
-    --graphite-soft:#57514C;
-    --green:#2FA84F;
-    --green-dark:#248F3D;
-    /* verde só para texto pequeno sobre branco/creme, garante 4.5:1 */
-    --green-text:#1B7233;
-    --border-soft:#E6DED4;
-    --radius:12px;
-    --max:640px;
+    --wine-700:#6E2033;
+    --wine-50:#F7EEF0;
+    --green:#1F7A3D;
+    --green-700:#17602F;
+    --green-50:#EAF4ED;
+    --line:#E8DFD4;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(43,43,43,.04),0 10px 28px -12px rgba(43,43,43,.14);
+    --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.2 2.2 4.8-4.9' fill='none' stroke='%231F7A3D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
   body{
-    margin:0;
-    background:var(--cream);
-    color:var(--graphite);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    font-size:17px;
-    font-weight:450;
-    line-height:1.6;
-    font-synthesis:none;
+    margin:0;background:var(--bg);color:var(--ink);
+    font:450 17px/1.6 'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    font-synthesis:none;text-rendering:optimizeLegibility;
   }
-  h1,h2,h3{
-    font-family:'Poppins',system-ui,-apple-system,sans-serif;
-    color:var(--graphite);
-    margin:0 0 16px;
-    line-height:1.25;
-  }
-  h1{font-size:clamp(1.5rem, 6vw, 1.9rem);font-weight:700;line-height:1.18;margin-bottom:20px;}
-  h2{font-size:1.5rem;font-weight:700;}
-  h3{font-size:1.15rem;font-weight:600;}
-  p{margin:0 0 16px;}
-  a{color:inherit;}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--wine);outline-offset:2px;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
-  header.hero .wrap{padding-left:24px;padding-right:24px;}
-  @media (min-width:900px){
-    .wrap--wide{max-width:1000px;}
-  }
-  section, header.hero{padding:38px 0;}
-  header.hero{padding:28px 0;}
-  @media (min-width:681px){
-    section, header.hero{padding:48px 0;}
-  }
-  .bg-white{background:var(--white);}
-  .bg-cream{background:var(--cream);}
-  .center{text-align:center;}
-  .eyebrow{
-    color:var(--wine);
-    font-weight:600;
-    font-size:.95rem;
-    letter-spacing:.02em;
-    margin-bottom:20px;
-  }
-  .sub{color:var(--graphite);font-size:17px;line-height:1.6;margin-bottom:24px;}
-  .price-strike{
-    color:var(--wine);
-    text-decoration:line-through;
-    font-weight:700;
-    font-size:1.3rem;
-  }
-  .price-big{
-    color:var(--green-dark);
-    font-weight:700;
-    font-size:2.4rem;
-    font-family:'Poppins',system-ui,sans-serif;
-    line-height:1;
-  }
-  /* Botões */
-  .btn{
-    display:block;
-    width:100%;
-    min-height:56px;
-    border:0;
-    border-radius:var(--radius);
-    font-family:'Poppins',system-ui,sans-serif;
-    font-weight:700;
-    font-size:1.1rem;
-    text-align:center;
-    text-decoration:none;
-    padding:16px 18px;
-    cursor:pointer;
+  img{display:block;max-width:100%;height:auto;}
+  h1,h2,h3{font-family:'Poppins',system-ui,-apple-system,sans-serif;color:var(--ink);margin:0;}
+  h1{font-weight:700;font-size:clamp(28px,7.4vw,48px);line-height:1.12;letter-spacing:-.015em;}
+  h2{font-weight:700;font-size:clamp(25px,6.4vw,38px);line-height:1.18;letter-spacing:-.01em;}
+  h3{font-weight:600;font-size:19px;line-height:1.3;}
+  p{margin:0;}
+  strong{font-weight:650;}
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:6px;}
+
+  .wrap{width:100%;max-width:680px;margin:0 auto;padding:0 22px;}
+  .wrap--wide{max-width:1080px;}
+  .section{padding:60px 0;}
+  .section--paper{background:var(--paper);}
+  @media (min-width:900px){.section{padding:100px 0;}}
+  .kicker{font:600 15px/1.3 'Poppins',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--wine);margin-bottom:12px;}
+  .head > * + *{margin-top:14px;}
+  .lead{font-size:18px;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;min-height:60px;padding:16px 20px;border-radius:14px;
+    background:var(--green);color:#fff;text-decoration:none;text-align:center;
+    font:700 17px/1.2 'Poppins',system-ui,sans-serif;letter-spacing:.01em;
+    box-shadow:0 12px 24px -10px rgba(31,122,61,.6);
+    transition:background .15s ease,transform .15s ease;
     -webkit-tap-highlight-color:transparent;
   }
-  .btn-cta{
-    background:var(--green);
-    color:#FFFFFF;
+  .cta:hover{background:var(--green-700);}
+  .cta:active{transform:translateY(1px);}
+  .cta svg{flex:0 0 20px;width:20px;height:20px;}
+  /* Celular: sem seta e com letra um pouco menor, pro texto do botão caber numa linha */
+  @media (max-width:480px){
+    .cta{font-size:16px;letter-spacing:0;padding:16px 14px;}
+    .cta svg{display:none;}
   }
-  .btn-cta:hover,.btn-cta:focus-visible{background:var(--green-dark);}
-  .microcopy{
-    text-align:center;
-    color:var(--graphite-soft);
-    font-size:15px;
-    margin-top:12px;
-  }
-  /* Destaque de citação: alinhado à esquerda, com barra vinho */
-  .destaque-frase{
-    font-size:1.2rem;
-    font-weight:600;
-    text-align:left;
-    border-left:4px solid var(--wine);
-    padding-left:16px;
-    margin:28px 0;
-  }
-  strong{color:var(--graphite);}
-
-  /* ===== HERO ===== */
-  .hero-grid{
-    display:grid;
-    grid-template-areas:
-      "eyebrow" "h1" "sub" "mockup" "list" "price" "cta" "microcopy" "complement";
-  }
-  .hero-grid > .eyebrow{grid-area:eyebrow;}
-  .hero-grid > h1{grid-area:h1;}
-  .hero-grid > .sub{grid-area:sub;}
-  .hero-complement{grid-area:complement;color:var(--graphite);}
-  .hero-mockup{grid-area:mockup;margin-bottom:24px;}
-  .hero-list{grid-area:list;list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:1fr;gap:8px;}
-  .hero-list li{display:flex;gap:8px;align-items:center;font-weight:600;font-size:16px;}
-  .hero-list li::before{content:"✓";color:var(--green-dark);font-weight:700;flex:0 0 auto;}
-  .hero-price{grid-area:price;display:flex;align-items:baseline;gap:10px;margin-bottom:16px;}
-  .hero-price__value{font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:2rem;color:var(--green-dark);}
-  .hero-price__note{color:var(--graphite-soft);font-size:15px;}
-  .hero-grid > .btn{grid-area:cta;}
-  .hero-grid > .microcopy{grid-area:microcopy;}
-  @media (min-width:520px){
-    .hero-list{grid-template-columns:1fr 1fr;}
-  }
-  @media (min-width:681px){
-    header.hero .wrap{max-width:1100px;}
-    .hero-grid{
-      grid-template-columns:1fr 1fr;
-      column-gap:48px;
-      align-items:start;
-      grid-template-areas:
-        "eyebrow mockup"
-        "h1 mockup"
-        "sub mockup"
-        "complement mockup"
-        "list mockup"
-        "price mockup"
-        "cta mockup"
-        "microcopy mockup";
-    }
-    .hero-mockup{align-self:center;margin-bottom:0;}
-  }
-  .mockup-stack{position:relative;width:100%;max-width:300px;margin:0 auto;aspect-ratio:4/5;}
-  .mockup-stack__img{position:absolute;width:74%;height:auto;border-radius:var(--radius);border:1px solid var(--border-soft);background:var(--white);box-shadow:0 12px 26px rgba(43,43,43,.16);}
-  .mockup-stack__img--back{top:0;left:0;transform:rotate(-8deg);z-index:1;}
-  .mockup-stack__img--mid{top:17%;right:0;transform:rotate(6deg);z-index:2;}
-  .mockup-stack__img--front{bottom:0;left:12%;transform:rotate(-2deg);z-index:3;}
-  /* Compactação da primeira dobra no celular, pra preço e CTA caberem na dobra */
-  @media (max-width:680px){
-    header.hero{padding:18px 0 30px;}
-    .hero-grid > .eyebrow{font-size:15px;margin-bottom:12px;}
-    .hero-grid > h1{margin-bottom:14px;}
-    .hero-grid > .sub{margin-bottom:12px;}
-    .hero-mockup{margin-bottom:10px;}
-    .mockup-stack{max-width:124px;}
-    .hero-mockup__label{margin-top:6px;}
-    .hero-list{gap:5px;margin-bottom:12px;}
-    .hero-list li{font-size:15px;}
-    .hero-price{margin-bottom:10px;}
-    .hero-price__value{font-size:1.8rem;}
-    .hero-complement{margin:20px 0 0;}
-  }
-  .hero-mockup__label{text-align:left;font-size:15px;color:var(--graphite-soft);margin:16px 0 0;line-height:1.5;}
-  .hero-mockup__label strong{display:block;color:var(--wine);font-family:'Poppins',system-ui,sans-serif;letter-spacing:.02em;margin-bottom:4px;}
-
-  /* ===== NÃO É OUTRA LISTA ===== */
-  .gap-list{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:10px;}
-  .gap-list li{display:flex;gap:10px;align-items:center;color:var(--graphite);}
-  .gap-list li::before{
-    content:"?";
-    flex:0 0 22px;height:22px;width:22px;
-    border-radius:50%;
-    background:var(--border-soft);
-    color:var(--wine);
-    font-weight:700;font-size:.85rem;
-    display:flex;align-items:center;justify-content:center;
-  }
-
-  /* ===== MÉTODO ===== */
-  .method-flow{display:flex;flex-direction:column;gap:10px;margin:24px 0;}
-  /* Passo horizontal: número à esquerda, texto à direita, tudo alinhado à esquerda */
-  .method-step{
-    background:var(--white);border:1px solid var(--border-soft);border-radius:var(--radius);
-    padding:14px 16px;text-align:left;
-    display:flex;gap:14px;align-items:flex-start;
-  }
-  .method-step__num{
-    display:flex;align-items:center;justify-content:center;
-    flex:0 0 32px;width:32px;height:32px;border-radius:50%;
-    background:var(--wine);color:#fff;
-    font-family:'Poppins',system-ui,sans-serif;font-weight:700;font-size:15px;
-  }
-  .method-step__text{min-width:0;}
-  .method-step h3{font-size:1rem;margin:0 0 2px;}
-  .method-step p{margin:0;color:var(--graphite);font-size:15px;line-height:1.5;}
-  .method-arrow{display:none;}
+  .cta-block{margin-top:30px;}
+  .cta-note{margin-top:12px;font-size:15px;line-height:1.45;color:var(--ink-2);text-align:center;}
   @media (min-width:900px){
-    .method-flow{flex-direction:row;align-items:stretch;gap:8px;}
-    .method-step{flex:1 1 0;min-width:0;flex-direction:column;gap:8px;}
-    .method-arrow{display:flex;align-items:center;color:var(--wine);font-size:1.3rem;font-weight:700;}
+    .cta{display:inline-flex;width:auto;padding:18px 34px;}
+    .cta-block--center{text-align:center;}
   }
 
-  /* ===== DEMONSTRAÇÃO REAL ===== */
-  .demo-grid{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
-  .demo-card{margin:0;background:var(--cream);border:1px solid var(--border-soft);border-radius:var(--radius);overflow:hidden;}
-  .demo-card img{display:block;width:100%;height:auto;}
-  .demo-card figcaption{padding:10px 14px;font-size:15px;color:var(--graphite-soft);text-align:left;}
-  @media (min-width:681px){
-    .demo-grid{display:grid;grid-template-columns:repeat(2,1fr);}
-  }
+  /* ---------- HERO ---------- */
+  .hero{padding:26px 0 52px;}
+  .hero__grid{display:grid;}
+  .hero__eyebrow{font-weight:600;font-size:16px;line-height:1.4;color:var(--wine);margin-bottom:12px;}
+  .hero h1 mark{background:none;color:var(--wine);}
+  .hero__sub{margin-top:14px;}
+  .hero__cta{margin-top:24px;}
+  .hero__visual{margin-top:36px;}
+  .hero__proof{margin-top:30px;}
   @media (min-width:900px){
-    .demo-grid{grid-template-columns:repeat(3,1fr);}
+    .hero{padding:72px 0 96px;}
+    .hero__grid{grid-template-columns:1.05fr .95fr;column-gap:64px;align-items:center;}
+    .hero__copy{grid-column:1;grid-row:1;}
+    .hero__proof{grid-column:1;grid-row:2;align-self:start;}
+    .hero__visual{grid-column:2;grid-row:1 / span 2;margin-top:0;}
+    .hero__sub{font-size:19px;}
+    .hero .cta-note{text-align:left;}
   }
 
-  /* ===== PROVAS ===== */
-  .depoimento-img.grande{margin:0 auto 20px;max-width:320px;}
-  img.depoimento-img{
-    display:block;width:100%;height:auto;
-    border-radius:var(--radius);background:var(--white);
-    border:1px solid var(--border-soft);
+  .mock{position:relative;width:100%;max-width:360px;margin:0 auto;aspect-ratio:10/9;}
+  .mock__card{
+    position:absolute;width:64%;border-radius:14px;overflow:hidden;background:#fff;
+    border:1px solid var(--line);
+    box-shadow:0 2px 4px rgba(43,43,43,.05),0 22px 44px -16px rgba(43,43,43,.32);
   }
-  .depo-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;}
-  .depo-grid img{
-    display:block;width:100%;height:auto;
-    border-radius:var(--radius);background:var(--white);
-    border:1px solid var(--border-soft);
+  .mock__card--back{left:0;top:3%;transform:rotate(-5deg);}
+  .mock__card--front{right:0;bottom:3%;transform:rotate(4deg);}
+  .mock__tag{
+    position:absolute;z-index:2;white-space:nowrap;
+    font:600 14px/1 'Poppins',system-ui,sans-serif;padding:9px 13px;border-radius:999px;
+    box-shadow:0 10px 20px -8px rgba(43,43,43,.35);
   }
-  .proof-tag{color:var(--graphite-soft);font-size:15px;}
+  .mock__tag--buy{top:0;right:4%;background:var(--green);color:#fff;}
+  .mock__tag--wait{left:0;top:52%;background:#fff;color:var(--ink);border:1px solid var(--line);}
+  .mock__tag--skip{right:10%;bottom:-2%;background:var(--wine);color:#fff;}
+  @media (min-width:900px){.mock{max-width:480px;}}
 
-  /* ===== HISTÓRIA (MARINA) ===== */
-  .foto-placeholder{aspect-ratio:1/1;max-width:280px;margin:0 auto 24px;}
-  img.foto-placeholder{
-    display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
-    border-radius:var(--radius);
+  .proof-chip{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;}
+  .proof-chip svg{flex:0 0 26px;width:26px;height:26px;color:var(--wine);}
+  .proof-chip p{font-size:17px;line-height:1.45;font-weight:600;}
+  .proof-chip small{display:block;margin-top:4px;font-size:15px;font-weight:450;color:var(--ink-2);}
+  @media (min-width:900px){.hero__proof{max-width:520px;margin-top:36px;}}
+
+  /* ---------- DÚVIDA ---------- */
+  .chat{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .chat li{
+    max-width:86%;padding:12px 16px;border-radius:18px;border-bottom-left-radius:6px;
+    background:var(--bg);border:1px solid var(--line);font-size:17px;line-height:1.4;
+  }
+  .chat li:nth-child(even){align-self:flex-end;background:var(--wine-50);border-color:#EDD9DE;border-bottom-left-radius:18px;border-bottom-right-radius:6px;}
+  .chat__who{display:block;font:600 15px/1.3 'Poppins',system-ui,sans-serif;color:var(--ink-2);margin-bottom:2px;}
+  .punch{margin-top:30px;font:600 23px/1.3 'Poppins',system-ui,sans-serif;}
+  .punch strong{display:block;font-weight:700;color:var(--wine);}
+  .doubts-label{margin-top:28px;font-size:16px;color:var(--ink-2);}
+  .doubts{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-wrap:wrap;gap:8px;}
+  .doubts li{font-size:16px;line-height:1.35;padding:9px 14px;border-radius:999px;background:var(--sand);}
+
+  /* ---------- LISTA × PLANO ---------- */
+  .versus{display:grid;gap:14px;margin-top:30px;}
+  .vs-card{border-radius:18px;padding:22px;}
+  .vs-card--list{background:var(--sand);}
+  .vs-card--plan{background:#fff;border:2px solid var(--green);box-shadow:var(--shadow);}
+  .vs-card__title{font:700 19px/1.25 'Poppins',system-ui,sans-serif;}
+  .vs-card__sub{margin-top:4px;font-size:16px;color:var(--ink-2);}
+  .vs-rows{list-style:none;margin:14px 0 0;padding:0;}
+  .vs-rows li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed #D5C8B9;font-size:17px;}
+  .vs-rows li span:last-child{font-weight:650;}
+  .factors{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;}
+  .factors li{display:flex;gap:10px;align-items:flex-start;font-size:16.5px;line-height:1.4;}
+  .factors li::before{content:"";flex:0 0 22px;height:22px;margin-top:1px;border-radius:50%;background:var(--green-50) var(--check) center/12px no-repeat;}
+  .vs-foot{margin-top:16px;font-weight:650;font-size:16.5px;line-height:1.45;}
+  .vs-card--list .vs-foot{color:var(--ink-2);}
+  .vs-card--plan .vs-foot{color:var(--green-700);}
+  @media (min-width:560px){.factors{grid-template-columns:1fr 1fr;column-gap:16px;}}
+  @media (min-width:900px){.versus{grid-template-columns:.8fr 1.2fr;gap:20px;align-items:stretch;}}
+
+  /* ---------- EXEMPLO ---------- */
+  .question{margin-top:22px;font:600 21px/1.3 'Poppins',system-ui,sans-serif;color:var(--wine);}
+  .moms{display:grid;gap:14px;margin-top:18px;}
+  .mom{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:20px;}
+  .mom__label{font:700 15px/1 'Poppins',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);}
+  .mom__facts{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:6px;}
+  .mom__facts li{font-size:15px;line-height:1.3;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;}
+  .mom__result{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);}
+  .mom__result p{font-size:15px;color:var(--ink-2);margin-bottom:8px;}
+  .mom__result ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;}
+  .mom__result li{display:flex;gap:10px;align-items:flex-start;font-weight:600;line-height:1.4;}
+  .mom__result li::before{content:"";flex:0 0 8px;height:8px;margin-top:8px;border-radius:50%;background:var(--green);}
+  @media (min-width:760px){.moms{grid-template-columns:1fr 1fr;}}
+  .demo-punch{margin-top:24px;font-size:18px;}
+  .shot{margin:24px 0 0;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:14px;}
+  .shot img{margin:0 auto;border-radius:10px;width:100%;max-width:440px;}
+  .shot figcaption{margin-top:10px;font-size:15px;line-height:1.45;color:var(--ink-2);text-align:center;}
+  .decide{margin-top:34px;}
+  .decide h3{font-size:19px;}
+  .decisions{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px;}
+  .decisions li{font:600 15px/1 'Poppins',system-ui,sans-serif;padding:11px 14px;border-radius:999px;}
+  .d-buy{background:var(--green-50);color:var(--green-700);}
+  .d-research{background:var(--sand);color:var(--ink);}
+  .d-wait{background:var(--wine-50);color:var(--wine-700);}
+  .d-used{background:#EEF0F4;color:var(--ink);}
+  .d-skip{background:var(--ink);color:#fff;}
+
+  /* ---------- PROVA 1 ---------- */
+  .proof1{display:grid;gap:26px;}
+  .big-quote{font:700 clamp(25px,6.6vw,38px)/1.2 'Poppins',system-ui,sans-serif;}
+  .big-quote span{color:var(--wine);}
+  .quote-sub{margin-top:16px;font-size:18px;}
+  .quote-by{margin-top:12px;font-size:15px;color:var(--ink-2);}
+  .print{margin:0 auto;width:100%;max-width:320px;}
+  .print img{border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);}
+  @media (min-width:900px){
+    .proof1{grid-template-columns:1.2fr .8fr;gap:64px;align-items:center;}
+    .proof1 .cta-note{text-align:left;}
   }
 
-  /* ===== TUDO O QUE VOCÊ RECEBE ===== */
-  .materials-list{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;}
-  .materials-list li{display:flex;flex-direction:column;gap:2px;padding:14px 0;border-bottom:1px solid var(--border-soft);}
-  .materials-list li strong{font-family:'Poppins',system-ui,sans-serif;color:var(--wine);}
-  .materials-list li span{color:var(--graphite);font-size:16px;}
-
-  /* ===== ANTES E DEPOIS ===== */
-  .compare-grid{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
-  .compare-card{border-radius:var(--radius);padding:20px;}
-  .compare-card--antes{background:var(--cream);border:1px solid var(--border-soft);}
-  .compare-card--depois{background:var(--white);border:2px solid var(--green);}
-  .compare-card--antes h3{color:var(--graphite-soft);}
-  .compare-card--depois h3{color:var(--green-text);}
-  .compare-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
-  .compare-list li{display:flex;gap:10px;align-items:flex-start;font-size:16px;}
-  .compare-list--antes li::before{content:"✕";color:var(--graphite-soft);font-weight:700;flex:0 0 18px;}
-  .compare-list--depois li::before{content:"✓";color:var(--green-dark);font-weight:700;flex:0 0 18px;}
-  @media (min-width:681px){
-    .compare-grid{flex-direction:row;}
-    .compare-card{flex:1 1 0;}
+  /* ---------- HISTÓRIA ---------- */
+  .story{display:grid;gap:28px;}
+  .story__photo img{width:100%;max-width:260px;aspect-ratio:1/1;object-fit:cover;border-radius:22px;}
+  .story__text > * + *{margin-top:14px;}
+  .story__big{font:700 24px/1.25 'Poppins',system-ui,sans-serif;color:var(--wine);}
+  .story__items{list-style:none;padding:0;margin:0;display:grid;gap:6px;}
+  .story__items li{position:relative;padding-left:20px;color:var(--ink-2);}
+  .story__items li::before{content:"";position:absolute;left:4px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--wine);}
+  .signature{font:600 16px/1.3 'Poppins',system-ui,sans-serif;}
+  @media (min-width:900px){
+    .story{grid-template-columns:.75fr 1.25fr;gap:64px;align-items:start;}
+    .story__photo img{max-width:100%;}
   }
 
-  /* ===== OFERTA ===== */
-  .plan-card{
-    background:var(--white);
-    border-radius:16px;
-    padding:26px 22px;
-    border:2px solid var(--border-soft);
-  }
-  .plan-card--destaque{
-    border:2px solid var(--wine);
-    padding:30px 22px;
-    box-shadow:0 10px 30px rgba(142,42,66,.12);
-  }
-  .plan-card--unica{max-width:440px;margin:0 auto;}
-  .plan-price-block{margin:18px 0;}
-  .plan-note{color:var(--graphite-soft);font-size:15px;}
-
-  /* ===== GARANTIA ===== */
-  .garantia-badge{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:56px;height:56px;border-radius:50%;
-    background:var(--green);color:#fff;
-    font-size:1.6rem;font-weight:700;
-    margin-bottom:16px;
+  /* ---------- O PLANO ---------- */
+  .guide{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow);}
+  .pill{display:inline-block;font:600 14px/1 'Poppins',system-ui,sans-serif;padding:8px 11px;border-radius:999px;}
+  .pill--wine{background:var(--wine-50);color:var(--wine-700);}
+  .pill--green{background:var(--green-50);color:var(--green-700);}
+  .guide h3{margin-top:12px;font-size:21px;}
+  .for{margin-top:8px;}
+  .checks{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px;}
+  .checks li{display:flex;gap:10px;align-items:flex-start;line-height:1.45;}
+  .checks li::before{content:"";flex:0 0 22px;height:22px;margin-top:1px;border-radius:50%;background:var(--green-50) var(--check) center/12px no-repeat;}
+  .items-label{margin-top:34px;}
+  .items{display:grid;gap:12px;margin-top:4px;}
+  .item{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;}
+  .item__img{flex:0 0 96px;width:96px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--bg);}
+  .item__img img{width:100%;}
+  .item h3{font-size:17px;line-height:1.25;}
+  .item p{margin-top:4px;font-size:16px;line-height:1.45;}
+  @media (min-width:760px){
+    .items{grid-template-columns:1fr 1fr;}
+    .item__img{flex-basis:120px;width:120px;}
   }
 
-  /* ===== FAQ ===== */
-  details.faq-item{
-    border-bottom:1px solid var(--border-soft);
-    padding:18px 0;
-  }
-  details.faq-item summary{
-    font-family:'Poppins',system-ui,sans-serif;
-    color:var(--wine);
-    font-weight:600;
-    font-size:1.05rem;
-    cursor:pointer;
-    list-style:none;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-  }
-  details.faq-item summary::-webkit-details-marker{display:none;}
-  details.faq-item summary::after{
-    content:"+";
-    flex:0 0 auto;
-    font-size:1.4rem;
-    color:var(--wine);
-    font-weight:400;
-    transition:transform .2s ease;
-  }
-  details.faq-item[open] summary::after{transform:rotate(45deg);}
-  details.faq-item p{margin:14px 0 0;color:var(--graphite);}
+  /* ---------- SERVE PRA VOCÊ ---------- */
+  .fit{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px;}
+  .fit li{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:18px 20px;}
+  .fit strong{display:block;font:600 17px/1.3 'Poppins',system-ui,sans-serif;margin-bottom:6px;}
+  .fit span{font-size:16.5px;line-height:1.5;}
+  @media (min-width:760px){.fit{grid-template-columns:1fr 1fr;}}
 
-  /* ===== Barra fixa mobile ===== */
-  footer.sticky-bar{
-    position:fixed;
-    left:0;right:0;bottom:0;
-    background:var(--white);
-    box-shadow:0 -4px 18px rgba(43,43,43,.14);
-    padding:12px 16px;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    transform:translateY(110%);
-    transition:transform .25s ease;
-    z-index:999;
+  /* ---------- PROVAS ---------- */
+  .proofs{display:grid;gap:14px;margin-top:28px;}
+  .proof{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow);}
+  .proof__text{margin-top:10px;font-weight:600;font-size:17px;line-height:1.45;}
+  .proof img{margin:14px auto 0;border-radius:12px;border:1px solid var(--line);}
+  .proof--tall img{max-width:280px;}
+  .proofs-note{margin-top:14px;font-size:15px;color:var(--ink-2);}
+  @media (min-width:900px){.proofs{grid-template-columns:repeat(3,1fr);align-items:start;}}
+
+  /* ---------- ANTES × DEPOIS ---------- */
+  .ba{display:grid;gap:14px;margin-top:28px;}
+  .ba__col{border-radius:20px;padding:22px;}
+  .ba__col--before{background:var(--sand);}
+  .ba__col--after{background:var(--green-50);}
+  .ba__title{font:700 15px/1 'Poppins',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
+  .ba__col--before .ba__title{color:var(--ink-2);}
+  .ba__col--after .ba__title{color:var(--green-700);}
+  .ba ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
+  .ba__col--before li{color:var(--ink-2);line-height:1.45;}
+  .ba__col--after li{display:flex;gap:10px;align-items:flex-start;font-weight:600;line-height:1.45;}
+  .ba__col--after li::before{content:"";flex:0 0 22px;height:22px;margin-top:1px;border-radius:50%;background:#fff var(--check) center/12px no-repeat;}
+  @media (min-width:760px){.ba{grid-template-columns:1fr 1fr;}}
+
+  /* ---------- PREÇO ---------- */
+  .section--price{background:var(--wine-700);color:#fff;}
+  .section--price .kicker{color:#F3C9D3;}
+  .section--price h2{color:#fff;}
+  .price-intro{margin-top:14px;font-size:18px;color:#F6E3E8;}
+  .price-card{margin:32px auto 0;max-width:520px;background:#fff;color:var(--ink);border-radius:24px;padding:26px 22px;box-shadow:0 34px 70px -24px rgba(0,0,0,.5);}
+  .price-card__name{font:700 21px/1.25 'Poppins',system-ui,sans-serif;}
+  .price-card__sub{margin-top:4px;font-size:16px;color:var(--ink-2);}
+  .price{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);text-align:center;}
+  .price__value{font:700 54px/1 'Poppins',system-ui,sans-serif;letter-spacing:-.02em;}
+  .price__value small{font-size:26px;vertical-align:.7em;margin-right:4px;letter-spacing:0;}
+  .price__note{margin-top:8px;font-size:16px;color:var(--ink-2);}
+  .price-card .cta{margin-top:20px;display:flex;width:100%;}
+  @media (max-width:380px){
+    .price-card{padding:24px 16px;}
+    .price-card .cta{padding-left:10px;padding-right:10px;}
   }
-  footer.sticky-bar.is-visible{transform:translateY(0);}
-  .sticky-bar__text{
-    flex:1 1 auto;
-    font-size:15px;
-    font-weight:600;
-    color:var(--graphite);
-    line-height:1.3;
+  .guarantee{margin-top:22px;display:flex;gap:14px;align-items:flex-start;background:var(--bg);border-radius:16px;padding:16px;}
+  .guarantee svg{flex:0 0 34px;width:34px;height:34px;color:var(--wine);}
+  .guarantee strong{display:block;font:600 17px/1.3 'Poppins',system-ui,sans-serif;}
+  .guarantee span{display:block;margin-top:2px;font-size:16px;line-height:1.45;}
+
+  /* ---------- FAQ ---------- */
+  .faq{margin-top:24px;border-top:1px solid var(--line);}
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq summary{
+    list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:18px 0;font:600 17px/1.35 'Poppins',system-ui,sans-serif;
   }
-  .sticky-bar__cta{
-    flex:0 0 auto;
-    background:var(--green);
-    color:#fff;
-    font-family:'Poppins',system-ui,sans-serif;
-    font-weight:700;
-    font-size:15px;
-    text-decoration:none;
-    padding:12px 16px;
-    border-radius:10px;
-    white-space:nowrap;
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"";flex:0 0 10px;height:10px;margin-right:4px;border-right:2px solid var(--wine);border-bottom:2px solid var(--wine);transform:rotate(45deg) translateY(-3px);transition:transform .2s ease;}
+  .faq details[open] summary::after{transform:rotate(-135deg) translateY(-3px);}
+  .faq details p{padding:0 0 20px;}
+
+  /* ---------- FINAL ---------- */
+  .final p{margin-top:14px;}
+  .footer{padding:30px 0 120px;font-size:15px;color:var(--ink-2);text-align:center;border-top:1px solid var(--line);}
+  @media (min-width:900px){.footer{padding-bottom:36px;}}
+
+  /* ---------- STICKY MOBILE ---------- */
+  .sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    display:flex;align-items:center;gap:12px;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.97);border-top:1px solid var(--line);
+    box-shadow:0 -10px 26px rgba(43,43,43,.08);
+    transform:translateY(120%);visibility:hidden;
+    transition:transform .25s ease,visibility 0s linear .25s;
   }
-  .sticky-bar__close{
-    flex:0 0 auto;
-    background:transparent;
-    border:0;
-    color:var(--graphite-soft);
-    font-size:1.2rem;
-    line-height:1;
-    min-width:44px;
-    min-height:44px;
-    padding:4px 6px;
-    cursor:pointer;
-  }
-  @media (min-width:681px){
-    footer.sticky-bar{display:none;}
+  .sticky.is-on{transform:none;visibility:visible;transition:transform .25s ease,visibility 0s;}
+  .sticky__txt{flex:1 1 auto;min-width:0;line-height:1.25;}
+  .sticky__txt strong{display:block;font:600 15px/1.25 'Poppins',system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .sticky__txt span{font-size:15px;color:var(--ink-2);white-space:nowrap;}
+  .sticky .cta{flex:0 0 auto;width:auto;min-height:48px;padding:12px 16px;font-size:15px;border-radius:12px;box-shadow:none;}
+  @media (min-width:900px){.sticky{display:none;}}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .cta,.sticky,.faq summary::after{transition:none;}
   }
 </style>
 <!-- UTMify: pixel (carrega o rastreamento e dispara PageView/InitiateCheckout sozinho) -->
@@ -408,314 +330,483 @@
 </head>
 <body>
 
-<!-- SEÇÃO 1 — PRIMEIRA DOBRA -->
-<header class="hero bg-cream">
-  <div class="wrap hero-grid">
-    <p class="eyebrow">Está entre 28 e 34 semanas e ainda não terminou o enxoval?</p>
-    <h1>Você não precisa comprar tudo. Precisa comprar as coisas certas, na ordem certa.</h1>
-    <p class="sub">O Enxoval Sem Desperdício mostra o que comprar agora, o que pode esperar e a quantidade certa de cada peça de acordo com a semana da gestação, o nascimento do bebê e o clima da sua cidade.</p>
-    <div class="hero-mockup">
-      <div class="mockup-stack">
-        <img class="mockup-stack__img mockup-stack__img--back" src="imgs/hero-planilha.webp" alt="Recorte real da Planilha de Preços e Controle" width="220" height="207" decoding="async">
-        <img class="mockup-stack__img mockup-stack__img--mid" src="imgs/hero-tabela.webp" alt="Recorte real da Tabela de Quantidades por Clima" width="220" height="216" decoding="async">
-        <img class="mockup-stack__img mockup-stack__img--front" src="imgs/hero-cronograma.webp" alt="Recorte real do Cronograma Semana a Semana" width="220" height="215" fetchpriority="high" decoding="async">
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="wrap wrap--wide hero__grid">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">Já comprou bastante e ainda sente que falta alguma coisa?</p>
+      <h1>Saiba o que <mark>ainda falta</mark> no enxoval do seu bebê. E o que você já pode parar de comprar.</h1>
+      <p class="hero__sub">Um plano simples que mostra o que comprar, quanto comprar e quando comprar, de acordo com o mês em que seu bebê nasce, o clima da sua cidade e a sua rotina.</p>
+      <div class="hero__cta">
+        <a class="cta" data-cta="hero" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="cta-note">R$29,90 · pagamento único · acesso imediato · 7 dias de garantia</p>
       </div>
-      <p class="hero-mockup__label"><strong>ENXOVAL SEM DESPERDÍCIO</strong>6 materiais para organizar seu enxoval do terceiro trimestre até a maternidade.</p>
     </div>
 
-    <ul class="hero-list">
-      <li>Cronograma semana a semana</li>
-      <li>Quantidades por tamanho e clima</li>
-      <li>Controle de preços e gastos</li>
-      <li>Mala da maternidade</li>
-      <li>Lista para o chá de bebê</li>
-    </ul>
-
-    <div class="hero-price">
-      <span class="hero-price__value">R$29,90</span>
-      <span class="hero-price__note">pagamento único</span>
+    <div class="hero__visual">
+      <div class="mock">
+        <div class="mock__card mock__card--back">
+          <img src="imgs/mockuptabela.webp" alt="Recorte real da Tabela de Quantidades, com quantas peças de cada tamanho comprar" width="570" height="560" decoding="async">
+        </div>
+        <div class="mock__card mock__card--front">
+          <img src="imgs/mockupcronograma.webp" alt="Recorte real do Cronograma Semana a Semana, da 12ª à 40ª semana" width="570" height="556" fetchpriority="high" decoding="async">
+        </div>
+        <span class="mock__tag mock__tag--buy" aria-hidden="true">Compre agora</span>
+        <span class="mock__tag mock__tag--wait" aria-hidden="true">Espere o bebê nascer</span>
+        <span class="mock__tag mock__tag--skip" aria-hidden="true">Não compre</span>
+      </div>
     </div>
 
-    <a href="#oferta" class="btn btn-cta">QUERO ORGANIZAR MEU ENXOVAL POR R$29,90</a>
-    <p class="microcopy">Acesso imediato · pagamento único · 7 dias de garantia</p>
-    <p class="hero-complement">Sem listas gigantes. Sem comprar tamanho demais. Sem descobrir depois do parto que centenas de reais ficaram parados no armário.</p>
+    <figure class="hero__proof proof-chip" style="margin-left:0;margin-right:0;margin-bottom:0;">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 6C6.5 6 4 8.6 4 12v6h6v-6H7c0-1.9 1.1-3 2.5-3V6zm10 0c-3 0-5.5 2.6-5.5 6v6h6v-6h-3c0-1.9 1.1-3 2.5-3V6z"/></svg>
+      <figcaption>
+        <p>“Organizei tudo com suas dicas e economizei quase R$1.500.”<small>Mensagem real de uma mãe que usou o método</small></p>
+      </figcaption>
+    </figure>
   </div>
 </header>
 
 <main>
 
-  <!-- SEÇÃO 2 — NÃO É OUTRA LISTA DE 180 ITENS -->
-  <section class="bg-white" aria-label="Diferencial">
+  <!-- 2. A DÚVIDA -->
+  <section class="section section--paper" aria-labelledby="t-duvida">
     <div class="wrap">
-      <h2>"Mas eu já tenho uma lista de enxoval..."</h2>
-      <p class="destaque-frase" style="margin-top:0;">Esse é justamente o problema.</p>
-      <p>Lista manda você comprar. Este método ajuda você a decidir.</p>
-      <p>Uma lista genérica não sabe:</p>
-      <ul class="gap-list">
-        <li>Quando o seu bebê vai nascer</li>
-        <li>O clima da sua cidade</li>
-        <li>Quantas vezes a sua família lava roupa</li>
-        <li>O que você já ganhou</li>
-        <li>O que ainda dá tempo de comprar</li>
-        <li>Quais tamanhos vão ser usados por menos tempo</li>
+      <div class="head">
+        <p class="kicker">Parece com você?</p>
+        <h2 id="t-duvida">Quanto mais você pesquisa, mais coisa aparece pra comprar.</h2>
+      </div>
+      <ul class="chat">
+        <li><span class="chat__who">Uma lista salva</span>6 bodies RN.</li>
+        <li><span class="chat__who">Um vídeo</span>Uns 12 bodies, no mínimo.</li>
+        <li><span class="chat__who">Uma amiga</span>Eu usei só 4.</li>
+        <li><span class="chat__who">Sua mãe</span>RN nem precisa. Ele cresce rápido.</li>
+        <li><span class="chat__who">O grupo de mães</span>Compra RN, sim. Muito!</li>
       </ul>
-      <p style="font-weight:700;">Por isso uma lista pode ter 150 itens e ainda fazer você comprar errado.</p>
-    </div>
-  </section>
-
-  <!-- SEÇÃO 3 — MÉTODO -->
-  <section class="bg-cream" aria-label="Método">
-    <div class="wrap wrap--wide">
-      <h2>Como funciona o Método Enxoval Sem Desperdício</h2>
-      <p>Não entregamos outra lista com 150 ou 180 itens. Cruzamos a semana da gestação, a época do nascimento, o clima, os tamanhos e a frequência de lavagem para ajudar você a decidir o que precisa e quando comprar.</p>
-      <div class="method-flow">
-        <div class="method-step">
-          <span class="method-step__num">1</span>
-          <div class="method-step__text">
-            <h3>Semana</h3>
-            <p>Sua semana de gestação hoje.</p>
-          </div>
-        </div>
-        <span class="method-arrow" aria-hidden="true">→</span>
-        <div class="method-step">
-          <span class="method-step__num">2</span>
-          <div class="method-step__text">
-            <h3>Clima</h3>
-            <p>O clima de onde o bebê vai nascer.</p>
-          </div>
-        </div>
-        <span class="method-arrow" aria-hidden="true">→</span>
-        <div class="method-step">
-          <span class="method-step__num">3</span>
-          <div class="method-step__text">
-            <h3>Tamanho</h3>
-            <p>Os tamanhos que ele vai realmente usar.</p>
-          </div>
-        </div>
-        <span class="method-arrow" aria-hidden="true">→</span>
-        <div class="method-step">
-          <span class="method-step__num">4</span>
-          <div class="method-step__text">
-            <h3>Quantidade</h3>
-            <p>Quantas peças de cada tamanho.</p>
-          </div>
-        </div>
-        <span class="method-arrow" aria-hidden="true">→</span>
-        <div class="method-step">
-          <span class="method-step__num">5</span>
-          <div class="method-step__text">
-            <h3>Ordem de compra</h3>
-            <p>O que comprar primeiro, o que pode esperar.</p>
-          </div>
-        </div>
-      </div>
-      <p class="destaque-frase">Você não vai só chegar no parto com tudo pronto. Você vai ficar tranquila pelas próximas semanas, sabendo exatamente qual é a próxima compra e quando ela precisa acontecer.</p>
-      <a href="#oferta" class="btn btn-cta">QUERO MONTAR O MEU NA ORDEM CERTA</a>
-    </div>
-  </section>
-
-  <!-- SEÇÃO 4 — DEMONSTRAÇÃO REAL -->
-  <section class="bg-white" aria-label="Demonstração">
-    <div class="wrap wrap--wide">
-      <h2>Veja os materiais de verdade</h2>
-      <p>Recortes reais dos materiais que você recebe, sem enfeite.</p>
-      <div class="demo-grid">
-        <figure class="demo-card">
-          <img src="imgs/mockupcronograma.webp" alt="Recorte real do Cronograma Semana a Semana, da 12ª à 40ª semana" width="570" height="556" loading="lazy" decoding="async">
-          <figcaption>Exemplo: cronograma da 12ª à 40ª semana</figcaption>
-        </figure>
-        <figure class="demo-card">
-          <img src="imgs/mockuptabela.webp" alt="Recorte real da Tabela de Quantidades, com colunas para clima frio, calor e ameno" width="570" height="560" loading="lazy" decoding="async">
-          <figcaption>Exemplo: quantidades mudam entre frio, calor e ameno</figcaption>
-        </figure>
-        <figure class="demo-card">
-          <img src="imgs/mockupplanilha.webp" alt="Recorte real da Planilha de Preços e Controle, com itens, quantidade e preço médio" width="566" height="532" loading="lazy" decoding="async">
-          <figcaption>Exemplo: controle de preços e do que já foi comprado</figcaption>
-        </figure>
-        <figure class="demo-card">
-          <img src="imgs/mockupmala.webp" alt="Recorte real do checklist da Mala da Maternidade" width="578" height="590" loading="lazy" decoding="async">
-          <figcaption>Exemplo: checklist da mala da maternidade</figcaption>
-        </figure>
-        <figure class="demo-card">
-          <img src="imgs/mockupcha.webp" alt="Recorte real da lista de presentes do Chá de Bebê" width="566" height="540" loading="lazy" decoding="async">
-          <figcaption>Exemplo: lista de presentes do chá de bebê</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO 5 — PROVAS -->
-  <section class="bg-cream" aria-label="Provas">
-    <div class="wrap">
-      <h2>Quem usou, conta</h2>
-      <img class="depoimento-img grande" src="imgs/depoimento-principal.webp" alt="Print de depoimento: mãe contando que terminou de montar o enxoval do bebê e economizou quase R$1.500" width="640" height="975" loading="lazy" decoding="async">
-      <p style="font-weight:600;">"Economizei quase R$1.500 e não ficou faltando nada."</p>
-      <p class="proof-tag">Gestante que utilizou o método para montar o enxoval.</p>
-
-      <div class="depo-grid">
-        <img src="imgs/depo-novo.webp" alt="Print de mensagem: mãe contando que conseguiu montar o enxoval mesmo em cima da hora, com a ajuda do método" width="640" height="960" loading="lazy" decoding="async">
-        <img src="imgs/instagram-2.webp" alt="Print de caixinha do Instagram: &quot;Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha&quot;" width="700" height="312" loading="lazy" decoding="async">
-      </div>
-      <p class="proof-tag">Gestantes que utilizaram o método para montar o enxoval.</p>
-    </div>
-  </section>
-
-  <!-- SEÇÃO 6 — HISTÓRIA (MARINA) -->
-  <section class="bg-white" aria-label="História">
-    <div class="wrap">
-      <img class="foto-placeholder" src="imgs/marina.webp" alt="Marina com o rosto próximo ao do bebê recém-nascido no colo" width="640" height="640" loading="lazy" decoding="async">
-      <h2>Eu criei este método depois de encontrar R$1.680 em coisas que meu filho nem usou.</h2>
-      <p>Eu sou Marina, mãe de dois. Na minha primeira gravidez, fiz o que quase toda mãe faz: peguei uma lista enorme na internet e comecei a comprar.</p>
-      <p>Quatro meses depois do nascimento, contei o que estava parado: R$1.680 em coisas que praticamente não foram usadas.</p>
-      <p>Foi daí que nasceu o Enxoval Sem Desperdício.</p>
-    </div>
-  </section>
-
-  <!-- SEÇÃO 7 — TUDO O QUE VOCÊ RECEBE -->
-  <section class="bg-cream" aria-label="O que você recebe">
-    <div class="wrap">
-      <h2>Tudo o que você recebe</h2>
-      <ul class="materials-list">
-        <li><strong>Guia principal</strong><span>Como decidir o que realmente comprar</span></li>
-        <li><strong>Cronograma semana a semana</strong><span>O que comprar e quando</span></li>
-        <li><strong>Quantidades por tamanho e clima</strong><span>Quantas peças comprar</span></li>
-        <li><strong>Controle de preços e gastos</strong><span>Como acompanhar o orçamento</span></li>
-        <li><strong>Mala da maternidade</strong><span>O que levar para mãe e bebê</span></li>
-        <li><strong>Chá de bebê</strong><span>O que pedir sem repetir presentes</span></li>
+      <p class="punch">No fim, você tem mais informação.<strong>E menos certeza.</strong></p>
+      <p class="doubts-label">E as dúvidas continuam:</p>
+      <ul class="doubts">
+        <li>Será que está faltando alguma coisa?</li>
+        <li>Será que comprei demais?</li>
+        <li>Esse tamanho vai servir?</li>
+        <li>Compro agora ou posso esperar?</li>
       </ul>
-      <p style="margin-top:16px;">Materiais práticos, feitos pra consultar direto do celular sempre que precisar.</p>
     </div>
   </section>
 
-  <!-- SEÇÃO 8 — ANTES E DEPOIS -->
-  <section class="bg-white" aria-label="Antes e depois">
+  <!-- 3. LISTA × PLANO -->
+  <section class="section" aria-labelledby="t-lista">
     <div class="wrap wrap--wide">
-      <h2>Antes e depois do método</h2>
-      <div class="compare-grid">
-        <div class="compare-card compare-card--antes">
-          <h3>Antes</h3>
-          <ul class="compare-list compare-list--antes">
-            <li>Lista enorme e genérica</li>
-            <li>Compras feitas por ansiedade</li>
-            <li>Dúvida sobre quantidades</li>
-            <li>Tamanhos comprados em excesso</li>
-            <li>Orçamento sem controle</li>
-            <li>Medo de deixar algo importante faltar</li>
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">O problema não é você</p>
+        <h2 id="t-lista">Uma lista diz o que comprar. Mas ela não sabe nada sobre o seu bebê.</h2>
+        <p class="lead">Ela dá o mesmo número pra mãe do Sul e pra mãe do Nordeste. Pro bebê que nasce no inverno e pro que nasce no verão.</p>
+      </div>
+      <div class="versus">
+        <div class="vs-card vs-card--list">
+          <p class="vs-card__title">Lista comum</p>
+          <p class="vs-card__sub">Diz o que comprar:</p>
+          <ul class="vs-rows">
+            <li><span>Bodies</span><span>6</span></li>
+            <li><span>Mantas</span><span>4</span></li>
+            <li><span>Macacões</span><span>6</span></li>
+            <li><span>Fraldas RN</span><span>vários pacotes</span></li>
           </ul>
+          <p class="vs-foot">O mesmo número pra todo mundo.</p>
         </div>
-        <div class="compare-card compare-card--depois">
-          <h3>Depois</h3>
-          <ul class="compare-list compare-list--depois">
-            <li>Prioridades definidas</li>
-            <li>Quantidades mais conscientes</li>
-            <li>Ordem de compra por semana</li>
-            <li>Clareza sobre o que pode esperar</li>
-            <li>Gastos organizados</li>
-            <li>Mais segurança para decidir</li>
+        <div class="vs-card vs-card--plan">
+          <p class="vs-card__title">Enxoval Sem Desperdício</p>
+          <p class="vs-card__sub">Antes de dizer quanto, olha pra:</p>
+          <ul class="factors">
+            <li>O mês em que o bebê nasce</li>
+            <li>O clima da sua cidade</li>
+            <li>A sua semana de gestação</li>
+            <li>Quantas vezes você lava roupa</li>
+            <li>O que você já comprou</li>
+            <li>O que pode esperar o bebê nascer</li>
+          </ul>
+          <p class="vs-foot">Assim você chega no número que faz sentido pra sua casa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. NA PRÁTICA -->
+  <section class="section section--paper" aria-labelledby="t-exemplo">
+    <div class="wrap wrap--wide">
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">Na prática</p>
+        <h2 id="t-exemplo">A mesma pergunta. Duas mães. Respostas diferentes.</h2>
+      </div>
+      <p class="question">“Quantos bodies eu compro?”</p>
+      <div class="moms">
+        <div class="mom">
+          <p class="mom__label">Mãe A</p>
+          <ul class="mom__facts">
+            <li>Bebê nasce no inverno</li>
+            <li>Cidade fria</li>
+            <li>Lava roupa 2 vezes por semana</li>
+          </ul>
+          <div class="mom__result">
+            <p>O que muda pra ela:</p>
+            <ul>
+              <li>Mais manga longa e macacão</li>
+              <li>Mais peças, porque lava menos vezes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mom">
+          <p class="mom__label">Mãe B</p>
+          <ul class="mom__facts">
+            <li>Bebê nasce no verão</li>
+            <li>Cidade quente</li>
+            <li>Lava roupa 4 vezes por semana</li>
+          </ul>
+          <div class="mom__result">
+            <p>O que muda pra ela:</p>
+            <ul>
+              <li>Mais manga curta</li>
+              <li>Menos peças, porque lava mais vezes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="max-width:680px;">
+        <p class="demo-punch">Uma lista pronta daria a mesma resposta pras duas. <strong>A Tabela de Quantidades cruza essas informações e mostra o número de cada uma.</strong></p>
+        <figure class="shot">
+          <img src="imgs/mockuptabela.webp" alt="Recorte real da Tabela de Quantidades por clima e mês de nascimento, com opções para frio, calor e ameno" width="570" height="560" loading="lazy" decoding="async">
+          <figcaption>Recorte real da Tabela de Quantidades: os números mudam entre frio, calor e ameno.</figcaption>
+        </figure>
+        <div class="decide">
+          <h3>E cada item do enxoval ganha uma decisão clara:</h3>
+          <ul class="decisions">
+            <li class="d-buy">Compre agora</li>
+            <li class="d-research">Pesquise agora</li>
+            <li class="d-wait">Espere o bebê nascer</li>
+            <li class="d-used">Aceite usado</li>
+            <li class="d-skip">Não compre</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO 9 — OFERTA E PREÇO -->
-  <section class="bg-cream" id="oferta" aria-label="Oferta">
-    <div class="wrap">
-      <div class="plan-card plan-card--destaque plan-card--unica">
-        <h2 style="font-size:1.3rem;">Quanto custa comprar errado?</h2>
-        <p>Algumas peças compradas no tamanho ou na quantidade errada já podem custar mais do que este guia inteiro.</p>
-        <p style="font-weight:600;">Você recebe o sistema completo por:</p>
-        <div class="plan-price-block center">
-          <div class="price-strike">R$97</div>
-          <div class="price-big">R$29,90</div>
-          <p class="plan-note" style="margin-top:4px;">Pagamento único. Sem assinatura.</p>
+  <!-- 5. PRIMEIRA PROVA -->
+  <section class="section" aria-labelledby="t-prova">
+    <div class="wrap wrap--wide">
+      <div class="proof1">
+        <div>
+          <p class="kicker">Quem usou, conta</p>
+          <p class="big-quote" id="t-prova">“Organizei tudo com suas dicas e <span>economizei quase R$1.500.</span>”</p>
+          <p class="quote-sub">“Nunca imaginei que dava para montar um enxoval completo gastando tão pouco e sem deixar faltar nada.”</p>
+          <p class="quote-by">Mensagem real enviada pra Marina</p>
+          <div class="cta-block">
+            <a class="cta" data-cta="prova" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MONTAR O MEU SEM CHUTE<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <p class="cta-note">R$29,90 · pagamento único · acesso imediato</p>
+          </div>
         </div>
-        <a href="https://pay.wiapy.com/ITw9StRAgYeU" class="btn btn-cta">QUERO EVITAR COMPRAS DESNECESSÁRIAS</a>
-        <p class="microcopy">Acesso imediato · 7 dias de garantia</p>
+        <figure class="print" style="margin-bottom:0;">
+          <img src="imgs/depoimento-principal.webp" alt="Print de mensagem: mãe conta que terminou de montar o enxoval, organizou tudo com as dicas e economizou quase R$1.500" width="640" height="975" loading="lazy" decoding="async">
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO 10 — GARANTIA -->
-  <section class="bg-white" aria-label="Garantia">
-    <div class="wrap">
-      <span class="garantia-badge" aria-hidden="true">✓</span>
-      <h2>Você tem 7 dias para conhecer o material</h2>
-      <p>Depois da compra, você acessa os materiais, avalia com calma e, se entender que não é pra você, pode pedir o reembolso dentro desse prazo. Sem burocracia.</p>
+  <!-- 6. QUEM CRIOU -->
+  <section class="section section--paper" aria-labelledby="t-marina">
+    <div class="wrap wrap--wide">
+      <div class="story">
+        <div class="story__photo">
+          <img src="imgs/marina.webp" alt="Marina com o bebê recém-nascido no colo" width="640" height="640" loading="lazy" decoding="async">
+        </div>
+        <div class="story__text">
+          <p class="kicker" style="margin-bottom:0;">Quem criou</p>
+          <h2 id="t-marina">Eu fiz o que quase toda mãe faz.</h2>
+          <p>Na primeira gravidez, peguei uma lista de enxoval da internet. Tinha mais de 180 itens. Comprei quase tudo.</p>
+          <p>Uns quatro meses depois do nascimento, fui arrumar o quarto e fiz a conta do que estava parado:</p>
+          <p class="story__big">R$1.680 em coisas que quase não usamos.</p>
+          <ul class="story__items">
+            <li>A saída de maternidade, usada uma vez.</li>
+            <li>O kit berço, que tive que tirar por segurança.</li>
+            <li>O canguru, que ele odiou.</li>
+            <li>Os sapatinhos, que nunca serviram.</li>
+          </ul>
+          <p>Aí comecei a perguntar pra toda mãe que eu conhecia: o que você comprou e não usou? Anotei tudo numa planilha.</p>
+          <p>No segundo filho, comprei metade. <strong>E não faltou nada.</strong></p>
+          <p>Esse jeito de decidir virou o Enxoval Sem Desperdício.</p>
+          <p class="signature">Marina, mãe de dois</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- SEÇÃO 11 — FAQ -->
-  <section class="bg-cream" aria-label="Perguntas frequentes">
+  <!-- 7. O PLANO -->
+  <section class="section" aria-labelledby="t-plano">
+    <div class="wrap wrap--wide">
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">O que você recebe</p>
+        <h2 id="t-plano">Seu plano pra saber o que comprar daqui até o nascimento.</h2>
+        <p class="lead">Não é pra estudar. É pra abrir no celular e consultar sempre que bater a dúvida.</p>
+      </div>
+
+      <div class="guide">
+        <span class="pill pill--wine">O principal</span>
+        <h3>Guia Completo: Enxoval Sem Desperdício 3.0</h3>
+        <p class="for"><strong>Pra você saber</strong> o que comprar agora, o que pode esperar e o que nem precisa comprar.</p>
+        <ul class="checks">
+          <li>As 12 coisas que quase toda mãe compra, guarda e nunca usa</li>
+          <li>Onde dá pra economizar e onde não vale a pena</li>
+          <li>Quantos bodies de RN, P e M, com o motivo de cada número</li>
+          <li>Uma trilha pra quem já está de 28, 30 ou 34 semanas</li>
+          <li>O que fazer se o bebê te surpreender: se golfa muito, se não aceita chupeta, se nasce grande</li>
+        </ul>
+      </div>
+
+      <p class="kicker items-label">E mais 5 materiais de apoio</p>
+      <div class="items">
+        <div class="item">
+          <div class="item__img"><img src="imgs/mockupcronograma.webp" alt="" width="570" height="556" loading="lazy" decoding="async"></div>
+          <div>
+            <h3>Cronograma Semana a Semana</h3>
+            <p>Pra saber o que resolver agora e o que pode esperar, da 12ª à 40ª semana.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__img"><img src="imgs/mockuptabela.webp" alt="" width="570" height="560" loading="lazy" decoding="async"></div>
+          <div>
+            <h3>Tabela de Quantidades por Clima e Mês</h3>
+            <p>Pra saber quantas peças de cada tamanho comprar, pro clima e pro mês do nascimento.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__img"><img src="imgs/mockupplanilha.webp" alt="" width="566" height="532" loading="lazy" decoding="async"></div>
+          <div>
+            <h3>Planilha de Preços e Controle</h3>
+            <p>Pra saber quanto já gastou, o que já comprou e onde achou mais barato.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__img"><img src="imgs/mockupmala.webp" alt="" width="578" height="590" loading="lazy" decoding="async"></div>
+          <div>
+            <h3>Mala da Maternidade</h3>
+            <p>Pra saber o que levar pra você e pro bebê, e o que não precisa levar.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__img"><img src="imgs/mockupcha.webp" alt="" width="566" height="540" loading="lazy" decoding="async"></div>
+          <div>
+            <h3>Chá de Bebê Estratégico</h3>
+            <p>Pra saber o que pedir no chá e ganhar os itens caros, em vez de cinco mantas repetidas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. SERVE PRA VOCÊ -->
+  <section class="section section--paper" aria-labelledby="t-fit">
+    <div class="wrap wrap--wide">
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">Serve pra você?</p>
+        <h2 id="t-fit">Não importa em que ponto do enxoval você está.</h2>
+      </div>
+      <ul class="fit">
+        <li><strong>Está no começo da gestação</strong><span>Você segue o cronograma desde a 12ª semana e só compra quando fizer sentido.</span></li>
+        <li><strong>Está perto de ganhar o bebê</strong><span>Tem uma trilha pra quem está em cima da hora, com o que resolver primeiro.</span></li>
+        <li><strong>Já comprou muita coisa</strong><span>Você confere o que já tem, vê o que ainda falta e descobre o que pode parar de comprar.</span></li>
+        <li><strong>Já tem uma lista salva</strong><span>Você continua com a sua lista e decide quanto e quando comprar cada item.</span></li>
+        <li><strong>Vai ganhar muita coisa no chá</strong><span>Você monta a lista do chá pra receber o que falta, e não mais do mesmo.</span></li>
+      </ul>
+      <div class="cta-block cta-block--center" style="max-width:680px;">
+        <a class="cta" data-cta="serve-pra-voce" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO DE ENXOVAL<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="cta-note">R$29,90 · pagamento único · 7 dias de garantia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. MAIS PROVAS -->
+  <section class="section" aria-labelledby="t-provas">
+    <div class="wrap wrap--wide">
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">Mais mães</p>
+        <h2 id="t-provas">Quem parou de montar o enxoval no escuro.</h2>
+      </div>
+      <div class="proofs">
+        <figure class="proof proof--tall" style="margin:0;">
+          <span class="pill pill--green">Começou em cima da hora</span>
+          <figcaption class="proof__text">Comparou com as listas prontas e com o que todo mundo falava: ia gastar uns R$1.700 a mais.</figcaption>
+          <img src="imgs/depo-novo.webp" alt="Print de mensagem: mãe conta que conseguiu montar o enxoval em cima da hora e que, seguindo listas prontas, gastaria uns 1700 reais a mais" width="640" height="960" loading="lazy" decoding="async">
+        </figure>
+        <figure class="proof" style="margin:0;">
+          <span class="pill pill--green">Segurança pra decidir</span>
+          <figcaption class="proof__text">“Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha.”</figcaption>
+          <img src="imgs/instagram-2.webp" alt="Print de resposta no Instagram: Foi a melhor coisa que me aconteceu, eu não ia conseguir sozinha" width="700" height="312" loading="lazy" decoding="async">
+        </figure>
+        <figure class="proof" style="margin:0;">
+          <span class="pill pill--green">Tudo pronto antes do bebê</span>
+          <figcaption class="proof__text">Montando o enxoval com calma, antes do nascimento.</figcaption>
+          <img src="imgs/instagram-3.webp" alt="Print de resposta no Instagram: mãe conta que amou o guia, que o bebê nasce em janeiro e que está terminando de montar o enxoval" width="700" height="291" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <p class="proofs-note">Prints reais de mensagens enviadas pra Marina.</p>
+    </div>
+  </section>
+
+  <!-- 10. ANTES × DEPOIS -->
+  <section class="section section--paper" aria-labelledby="t-muda">
+    <div class="wrap wrap--wide">
+      <div class="head" style="max-width:680px;">
+        <p class="kicker">O que muda</p>
+        <h2 id="t-muda">Do “será que…” pro “eu sei”.</h2>
+      </div>
+      <div class="ba">
+        <div class="ba__col ba__col--before">
+          <p class="ba__title">Antes</p>
+          <ul>
+            <li>“Será que está faltando alguma coisa?”</li>
+            <li>“Será que comprei demais?”</li>
+            <li>“Esse tamanho vai servir?”</li>
+            <li>“Compro agora ou espero?”</li>
+          </ul>
+        </div>
+        <div class="ba__col ba__col--after">
+          <p class="ba__title">Com o plano</p>
+          <ul>
+            <li>Eu sei o que ainda falta.</li>
+            <li>Eu sei o que posso parar de comprar.</li>
+            <li>Eu sei quantas peças de cada tamanho.</li>
+            <li>Eu sei o que resolver agora e o que pode esperar.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. PREÇO + GARANTIA -->
+  <section class="section section--price" id="preco" aria-labelledby="t-preco">
     <div class="wrap">
-      <h2>Perguntas frequentes</h2>
+      <div class="head">
+        <p class="kicker">Quanto custa</p>
+        <h2 id="t-preco">Um macacão que não serve. Uma manta repetida. Um pacote de fralda RN que sobra.</h2>
+      </div>
+      <p class="price-intro">Qualquer um desses já custa perto do valor do plano inteiro.</p>
+
+      <div class="price-card" data-hide-sticky>
+        <p class="price-card__name">Enxoval Sem Desperdício</p>
+        <p class="price-card__sub">Seu plano completo pro enxoval</p>
+        <ul class="checks">
+          <li>Guia Completo: Enxoval Sem Desperdício 3.0</li>
+          <li>Cronograma Semana a Semana</li>
+          <li>Tabela de Quantidades por Clima e Mês</li>
+          <li>Planilha de Preços e Controle</li>
+          <li>Mala da Maternidade</li>
+          <li>Chá de Bebê Estratégico</li>
+        </ul>
+        <div class="price">
+          <p class="price__value"><small>R$</small>29,90</p>
+          <p class="price__note">Pagamento único. Sem mensalidade.</p>
+        </div>
+        <a class="cta" data-cta="preco" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO POR R$29,90<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="cta-note">Acesso imediato no seu e-mail · abre no celular</p>
+        <div class="guarantee">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.6-7 10-4-1.4-7-5.4-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p><strong>7 dias de garantia</strong><span>Entrou, olhou e achou que não é pra você? É só pedir o reembolso em até 7 dias.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FAQ -->
+  <section class="section" aria-labelledby="t-faq">
+    <div class="wrap">
+      <h2 id="t-faq">Ainda ficou alguma dúvida?</h2>
       <div class="faq">
-        <details class="faq-item" open>
+        <details open>
           <summary>Isso é só mais uma lista de enxoval?</summary>
-          <p>Não. Uma lista genérica só manda comprar. Aqui você recebe um método que cruza sua semana de gestação, o clima da sua cidade e a época do nascimento pra te dizer o que comprar, quanto comprar e quando comprar.</p>
+          <p>Não. Uma lista diz o que comprar. Aqui você vê quanto comprar de cada item e quando comprar, levando em conta o mês do nascimento, o clima da sua cidade e quantas vezes você lava roupa.</p>
         </details>
-        <details class="faq-item">
-          <summary>Estou com a gestação avançada. Ainda pode me ajudar?</summary>
-          <p>Sim. O método foi pensado justamente pra quem está em cima da hora: ele te mostra o que priorizar primeiro, mesmo com poucas semanas pela frente.</p>
+        <details>
+          <summary>Já comprei várias coisas. Ainda vale a pena?</summary>
+          <p>Vale. Você confere o que já tem, vê o que ainda falta e descobre o que pode parar de comprar. A planilha ajuda a marcar o que já foi comprado.</p>
         </details>
-        <details class="faq-item">
-          <summary>Como recebo os materiais?</summary>
-          <p>Logo após a aprovação do seu pagamento, você recebe no e-mail de compra os seus dados de acesso.</p>
+        <details>
+          <summary>Estou com a gestação bem avançada. Dá tempo?</summary>
+          <p>Dá. O guia tem uma trilha pra quem está em cima da hora, com a ordem do que resolver primeiro.</p>
         </details>
-        <details class="faq-item">
-          <summary>Consigo acessar pelo celular?</summary>
-          <p>Sim. Você pode abrir e consultar os materiais direto do celular, sempre que precisar.</p>
+        <details>
+          <summary>Como eu recebo?</summary>
+          <p>Logo depois que o pagamento é aprovado, você recebe os dados de acesso no e-mail usado na compra.</p>
         </details>
-        <details class="faq-item">
+        <details>
+          <summary>Consigo abrir no celular?</summary>
+          <p>Sim. Você abre e consulta tudo direto do celular.</p>
+        </details>
+        <details>
           <summary>O pagamento é único?</summary>
-          <p>Sim. O pagamento é único, não é assinatura nem mensalidade.</p>
+          <p>Sim. Você paga R$29,90 uma vez. Não é assinatura nem mensalidade.</p>
         </details>
-        <details class="faq-item">
-          <summary>Como funciona a garantia de 7 dias?</summary>
-          <p>Você tem 7 dias após a compra pra acessar o material e decidir se faz sentido pra você. Se não fizer, é só pedir o reembolso.</p>
+        <details>
+          <summary>E se eu não gostar?</summary>
+          <p>Você tem 7 dias pra pedir o reembolso.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO 12 — CTA FINAL -->
-  <section class="bg-white" aria-label="Chamada final">
+  <!-- 13. CTA FINAL -->
+  <section class="section section--paper final" aria-labelledby="t-final" data-hide-sticky>
     <div class="wrap">
-      <h2>Você não precisa terminar o enxoval comprando tudo. Precisa saber o que realmente importa agora.</h2>
-      <p>Guia completo + cronograma + tabela de quantidades + planilha de preços + mala da maternidade + chá de bebê.</p>
-      <div class="hero-price" style="margin:0 0 16px;">
-        <span class="hero-price__value">R$29,90</span>
-        <span class="hero-price__note">pagamento único</span>
+      <h2 id="t-final">Você pode continuar juntando listas. Ou pode saber o que ainda falta.</h2>
+      <p class="lead">Por R$29,90, você para de adivinhar e começa a decidir.</p>
+      <div class="cta-block">
+        <a class="cta" data-cta="final" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="cta-note">Pagamento único · acesso imediato · 7 dias de garantia</p>
       </div>
-      <a href="#oferta" class="btn btn-cta">QUERO ORGANIZAR MEU ENXOVAL AGORA</a>
-      <p class="microcopy">Acesso imediato · pagamento único · 7 dias de garantia</p>
     </div>
   </section>
 
 </main>
 
-<footer class="sticky-bar" id="stickyBar">
-  <p class="sticky-bar__text">Enxoval Sem Desperdício, por R$29,90</p>
-  <a href="#oferta" class="sticky-bar__cta">QUERO O GUIA</a>
-  <button type="button" class="sticky-bar__close" id="stickyBarClose" aria-label="Fechar barra">✕</button>
+<footer class="footer">
+  <div class="wrap">Enxoval Sem Desperdício · Mães Inteligentes</div>
 </footer>
+
+<div class="sticky" id="sticky">
+  <p class="sticky__txt"><strong>Enxoval Sem Desperdício</strong><span>R$29,90 · pagamento único</span></p>
+  <a class="cta" data-cta="sticky" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO</a>
+</div>
 
 <script>
 (function(){
-  var bar = document.getElementById('stickyBar');
-  var closeBtn = document.getElementById('stickyBarClose');
-  var dismissed = false;
-  function onScroll(){
-    if (dismissed) return;
-    if (window.scrollY > 600) bar.classList.add('is-visible');
-    else bar.classList.remove('is-visible');
+  // Barra fixa: aparece depois do hero e some quando o card de preço ou o CTA final está na tela.
+  var sticky = document.getElementById('sticky');
+  var hero = document.querySelector('.hero');
+  var stops = Array.prototype.slice.call(document.querySelectorAll('[data-hide-sticky]'));
+  if (sticky && hero && 'IntersectionObserver' in window) {
+    var heroGone = false, visibleStops = 0;
+    var update = function(){ sticky.classList.toggle('is-on', heroGone && visibleStops === 0); };
+    new IntersectionObserver(function(entries){
+      heroGone = !entries[0].isIntersecting && entries[0].boundingClientRect.top < 0;
+      update();
+    }).observe(hero);
+    var stopObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.target.__inView = e.isIntersecting; });
+      visibleStops = stops.filter(function(s){ return s.__inView; }).length;
+      update();
+    });
+    stops.forEach(function(s){ stopObs.observe(s); });
   }
-  closeBtn.addEventListener('click', function(){
-    dismissed = true;
-    bar.classList.remove('is-visible');
-  });
-  window.addEventListener('scroll', onScroll, {passive:true});
-  // UTMs e eventos de checkout ficam a cargo dos scripts da UTMify no <head>.
+
+  // CTA_CLICK: mede qual chamada leva mais gente pro checkout.
+  // O InitiateCheckout continua sendo disparado pela UTMify.
+  document.addEventListener('click', function(ev){
+    var el = ev.target && ev.target.closest ? ev.target.closest('[data-cta]') : null;
+    if (!el) return;
+    try {
+      if (typeof window.fbq === 'function') {
+        window.fbq('trackCustom', 'CTA_CLICK', { position: el.getAttribute('data-cta'), label: el.textContent.trim() });
+      }
+    } catch (e) {}
+  }, true);
 })();
 </script>
 
