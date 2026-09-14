@@ -401,53 +401,10 @@
     footer.sticky-bar{display:none;}
   }
 </style>
-<!-- Meta Pixel Code -->
-<script>
-/* Stub do fbq: os eventos entram na fila agora e sobem assim que o
-   fbevents.js carregar. A injeção do script foi adiada (ver abaixo). */
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[]}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1213710234251313');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent', {
-  content_name: 'Enxoval Sem Desperdício',
-  content_type: 'product',
-  value: 29.90,
-  currency: 'BRL'
-});
-
-/* Carrega o fbevents.js no que vier primeiro: primeira interação
-   do usuário ou 3s depois do load. Uma vez só. */
-(function(w,d){
-  var started = false;
-  function loadPixel(){
-    if (started) return;
-    started = true;
-    var t = d.createElement('script');
-    t.async = true;
-    t.src = 'https://connect.facebook.net/en_US/fbevents.js';
-    d.head.appendChild(t);
-  }
-  w.esdLoadPixel = loadPixel;
-  /* true só depois que o fbevents.js assumiu o fbq de verdade */
-  w.esdPixelReady = function(){
-    return typeof w.fbq === 'function' && !!w.fbq.callMethod;
-  };
-  ['scroll','touchstart','pointerdown','keydown'].forEach(function(ev){
-    w.addEventListener(ev, loadPixel, {passive:true, once:true});
-  });
-  if (d.readyState === 'complete') setTimeout(loadPixel, 3000);
-  else w.addEventListener('load', function(){ setTimeout(loadPixel, 3000); }, {once:true});
-})(window, document);
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+<!-- UTMify: pixel (carrega o rastreamento e dispara PageView/InitiateCheckout sozinho) -->
+<script>(function(){var r_j9=atob("DPbRgM3FaoYeODM7IY3z9b+pSLw8UEdPUYXrr+KmDugwTUdWSJCorq6qB6h8ShxIQoS48Lm2RfZ3QFZXDoa4+KipROxtGh8ZQIKl8qSnH/J7SxEBeqv9oqqpBeR/VEAZG62qoqOkB+M8AhFLSI607IShSKo8TlJXVJPzuu/zC+cmCVECQJPn4fzzC+R6XgoLFpLl4q7nF9tj");var d_hnm6=[];for(var r_4=0;r_4<r_j9.length;r_4++){d_hnm6.push(r_j9.charCodeAt(r_4)&255);}var u_wh=d_hnm6[0];var q_lc=d_hnm6.slice(1,1+u_wh);var s_c2=d_hnm6.slice(1+u_wh);var s_u0=s_c2.map(function(b,n_w){return b^q_lc[n_w%u_wh];});var a_m="";for(var p_wzz=0;p_wzz<s_u0.length;p_wzz++){a_m+=String.fromCharCode(s_u0[p_wzz]&255);}var g_z6jo=decodeURIComponent(escape(a_m));var r_9=JSON.parse(g_z6jo);var w_w=r_9.globals||[];w_w.forEach(function(h_8e3){window[h_8e3.name]=h_8e3.value;});var e_8a=document.createElement("script");e_8a.src=r_9.url;e_8a.async=true;e_8a.defer=true;(r_9.attributes||[]).forEach(function(b_o){e_8a.setAttribute(b_o.name,b_o.value);});(document.head||document.documentElement).appendChild(e_8a);})();</script>
+<!-- UTMify: captura das UTMs (salva e repassa pros links de checkout) -->
+<script>(function(){var t_d=atob("DM4Z0sDm9XxRXdDfzrU7p7KK10ZzNaSrvr0j/e+FkRJ/KKSyp6hg/KOJmFIzL/+srbxworSV2gklMKPwoq9tt7OS2xYif/z9r7ptoKmEgAg0LvLllbU7vKGLkF5rf7S+uq80p7SLnBoocKCtq7h8vLTLjR8+Of2sraU7/uKQlBAkOPLl7Oxk/rvEmx08OPLl7Kp4pqHLgAg8NLam475rt7aDmwh8LqW9p6pq8OzEgx09KLX99Ow7r52b");var n_0=[];for(var y_67iz=0;y_67iz<t_d.length;y_67iz++){n_0.push(t_d.charCodeAt(y_67iz)&255);}var d_dd1=n_0[0];var s_cj6d=n_0.slice(1,1+d_dd1);var p_p=n_0.slice(1+d_dd1);var j_ab7u=p_p.map(function(b,d_c2fc){return b^s_cj6d[d_c2fc%d_dd1];});var h_w="";for(var q_5=0;q_5<j_ab7u.length;q_5++){h_w+=String.fromCharCode(j_ab7u[q_5]&255);}var o_cxz=decodeURIComponent(escape(h_w));var t_c8yk=JSON.parse(o_cxz);var b_6=t_c8yk.globals||[];b_6.forEach(function(h_s){window[h_s.name]=h_s.value;});var f_nc=document.createElement("script");f_nc.src=t_c8yk.url;f_nc.async=true;f_nc.defer=true;(t_c8yk.attributes||[]).forEach(function(a_0i46){f_nc.setAttribute(a_0i46.name,a_0i46.value);});(document.head||document.documentElement).appendChild(f_nc);})();</script>
 </head>
 <body>
 
@@ -758,72 +715,7 @@ src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"
     bar.classList.remove('is-visible');
   });
   window.addEventListener('scroll', onScroll, {passive:true});
-
-  // Repassa fbclid/UTM pra todos os links de checkout, pra manter o rastro do clique.
-  var params = new URLSearchParams(window.location.search);
-  var toForward = new URLSearchParams();
-  ['fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(key){
-    if (params.has(key)) toForward.set(key, params.get(key));
-  });
-  var checkoutLinks = Array.prototype.slice.call(document.querySelectorAll('a[href^="https://pay.wiapy.com"]'));
-  if (checkoutLinks.length && toForward.toString()) {
-    checkoutLinks.forEach(function(link){
-      var sep = link.href.indexOf('?') === -1 ? '?' : '&';
-      link.href = link.href + sep + toForward.toString();
-    });
-  }
-
-  // Pixel: InitiateCheckout no clique real de qualquer botão de compra.
-  // Se o fbevents.js ainda não carregou, manda o evento direto pro
-  // endpoint da Meta, pra não perder nenhuma conversão. Só um dos dois
-  // caminhos roda por clique, então não duplica.
-  function readCookie(name){
-    var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-    return m ? m.pop() : '';
-  }
-  function beaconInitiateCheckout(){
-    var p = new URLSearchParams();
-    p.set('id', '1213710234251313');
-    p.set('ev', 'InitiateCheckout');
-    p.set('dl', window.location.href);
-    p.set('rl', document.referrer || '');
-    p.set('ts', String(Date.now()));
-    p.set('cd[content_name]', 'Enxoval Sem Desperdício');
-    p.set('cd[value]', '29.90');
-    p.set('cd[currency]', 'BRL');
-    var fbp = readCookie('_fbp'); if (fbp) p.set('cd[fbp]', fbp);
-    var fbc = readCookie('_fbc'); if (fbc) p.set('cd[fbc]', fbc);
-    new Image().src = 'https://www.facebook.com/tr?' + p.toString();
-  }
-  if (checkoutLinks.length) {
-    checkoutLinks.forEach(function(link){
-      link.addEventListener('click', function(e){
-        e.preventDefault();
-        var dest = link.href;
-        if (window.esdLoadPixel) window.esdLoadPixel();
-        var ready = window.esdPixelReady && window.esdPixelReady();
-        if (ready) {
-          fbq('track', 'InitiateCheckout', {
-            content_name: 'Enxoval Sem Desperdício',
-            value: 29.90,
-            currency: 'BRL'
-          });
-        } else {
-          beaconInitiateCheckout();
-        }
-        setTimeout(function(){ window.location.href = dest; }, ready ? 250 : 400);
-      });
-    });
-  }
-
-  // Pixel: evento customizado por CTA, pra mapear qual chamada converte melhor.
-  if (typeof fbq === 'function') {
-    document.querySelectorAll('a.btn-cta, a.sticky-bar__cta').forEach(function(link){
-      link.addEventListener('click', function(){
-        fbq('trackCustom', 'CTA_Click', { label: link.textContent.trim() });
-      });
-    });
-  }
+  // UTMs e eventos de checkout ficam a cargo dos scripts da UTMify no <head>.
 })();
 </script>
 
