@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Enxoval Sem Desperdício: saiba o que ainda falta no enxoval do seu bebê</title>
-<meta name="description" content="O plano que mostra o que comprar, quanto comprar e quando comprar pro seu bebê, de acordo com o mês do nascimento, o clima da sua cidade e a sua rotina. Pagamento único de R$29,90.">
+<meta name="description" content="O plano que mostra o que comprar, quanto comprar e quando comprar pro seu bebê, de acordo com o mês do nascimento, o clima da sua cidade e a sua rotina. Pagamento único de R$67.">
 <meta name="theme-color" content="#FAF6F1">
 <link rel="preload" as="font" href="fonts/poppins-700.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="font" href="fonts/inter-var.woff2" type="font/woff2" crossorigin>
@@ -96,7 +96,8 @@
   .hero h1 mark{background:none;color:var(--wine);}
   .hero__sub{margin-top:12px;}
   .hero__proof{margin-top:20px;}
-  .hero__cta{margin-top:16px;}
+  .hero__cta{margin-top:16px;scroll-margin-top:150px;}
+  @media (min-width:900px){.hero__cta{scroll-margin-top:200px;}}
   .hero__visual{margin-top:34px;}
   @media (min-width:900px){
     .hero{padding:72px 0 96px;}
@@ -345,10 +346,10 @@
         </figcaption>
       </figure>
 
-      <div class="hero__cta">
+      <div class="hero__cta" id="plano">
         <a class="cta" data-cta="cta_hero" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <ul class="assure">
-          <li><strong>R$29,90</strong></li>
+          <li><strong>R$67</strong></li>
           <li>Pagamento único</li>
           <li>Acesso imediato</li>
           <li>7 dias de garantia</li>
@@ -471,9 +472,9 @@
           </ul>
         </div>
         <div class="cta-block cta-block--left">
-          <a class="cta" data-cta="cta_mecanismo" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO O PLANO PRO MEU BEBÊ<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="cta" data-cta="cta_mecanismo" href="#plano">QUERO O PLANO PRO MEU BEBÊ<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <ul class="assure">
-            <li><strong>R$29,90</strong></li>
+            <li><strong>R$67</strong></li>
             <li>Pagamento único</li>
             <li>7 dias de garantia</li>
           </ul>
@@ -608,9 +609,9 @@
         <li><strong>Vai ganhar muita coisa no chá</strong><span>Você monta a lista do chá pra receber o que falta, e não mais do mesmo.</span></li>
       </ul>
       <div class="cta-block cta-block--center" style="max-width:680px;">
-        <a class="cta" data-cta="cta_para_quem" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO DE ENXOVAL<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="cta" data-cta="cta_para_quem" href="#plano">QUERO MEU PLANO DE ENXOVAL<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <ul class="assure">
-          <li><strong>R$29,90</strong></li>
+          <li><strong>R$67</strong></li>
           <li>Pagamento único</li>
           <li>7 dias de garantia</li>
         </ul>
@@ -675,10 +676,10 @@
           <li>Chá de Bebê Estratégico</li>
         </ul>
         <div class="price">
-          <p class="price__value"><small>R$</small>29,90</p>
+          <p class="price__value"><small>R$</small>67</p>
           <p class="price__note">Pagamento único. Sem mensalidade.</p>
         </div>
-        <a class="cta" data-cta="cta_preco" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO POR R$29,90<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="cta" data-cta="cta_preco" href="#plano">QUERO MEU PLANO POR R$67<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <p class="cta-note">Acesso imediato no seu e-mail · abre no celular</p>
         <div class="guarantee">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8.6-7 10-4-1.4-7-5.4-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -726,9 +727,9 @@
     <div class="wrap">
       <h2 id="t-final">Você pode continuar juntando listas. Ou pode saber o que ainda falta.</h2>
       <div class="cta-block cta-block--left">
-        <a class="cta" data-cta="cta_final" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="cta" data-cta="cta_final" href="#plano">QUERO SABER O QUE AINDA FALTA<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <ul class="assure">
-          <li><strong>R$29,90</strong></li>
+          <li><strong>R$67</strong></li>
           <li>Pagamento único</li>
           <li>Acesso imediato</li>
           <li>7 dias de garantia</li>
@@ -744,8 +745,8 @@
 </footer>
 
 <div class="sticky" id="sticky">
-  <p class="sticky__txt"><strong>Enxoval Sem Desperdício</strong><span>R$29,90 · pagamento único</span></p>
-  <a class="cta" data-cta="cta_sticky" href="https://pay.wiapy.com/ITw9StRAgYeU">QUERO MEU PLANO</a>
+  <p class="sticky__txt"><strong>Enxoval Sem Desperdício</strong><span>R$67 · pagamento único</span></p>
+  <a class="cta" data-cta="cta_sticky" href="#plano">QUERO MEU PLANO</a>
 </div>
 
 <script>
