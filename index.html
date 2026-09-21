@@ -19,19 +19,6 @@
 <link rel="preload" as="font" href="fonts/inter-var.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/hero-lista.webp" fetchpriority="high">
 
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1213710234251313');
-fbq('track','PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1213710234251313&ev=PageView&noscript=1"/></noscript>
-
 <!-- Utmify Pixel -->
 <script>
 window.pixelId = "6aa81b9ae6a16abdf907d4bc";
@@ -567,26 +554,12 @@ document.head.appendChild(a);
 </div>
 
 <script>
-document.addEventListener('click', function (e) {
-  var a = e.target.closest ? e.target.closest('a.cta') : null;
-  if (!a) return;
-  if (window.fbq) fbq('track', 'InitiateCheckout', { value: 27.00, currency: 'BRL' });
-}, { capture: true });
-
 (function(){
   var oferta = document.getElementById('oferta');
   var barra = document.getElementById('barra');
   var ofertaNaTela = false, marcou50 = false;
 
   if (oferta && 'IntersectionObserver' in window) {
-    var vc = new IntersectionObserver(function(en){
-      if (en[0].isIntersecting) {
-        if (window.fbq) fbq('track', 'ViewContent', { value: 27.00, currency: 'BRL' });
-        vc.disconnect();
-      }
-    }, { threshold: .25 });
-    vc.observe(oferta);
-
     new IntersectionObserver(function(en){
       ofertaNaTela = en[0].isIntersecting;
       atualiza();
@@ -600,7 +573,7 @@ document.addEventListener('click', function (e) {
     if (barra) barra.classList.toggle('on', pct > .25 && !ofertaNaTela);
     if (!marcou50) {
       var lido = (h.scrollTop + window.innerHeight) / h.scrollHeight;
-      if (lido >= .5) { marcou50 = true; if (window.fbq) fbq('trackCustom', 'Scroll50'); }
+      if (lido >= .5 && window.fbq) { marcou50 = true; fbq('trackCustom', 'Scroll50'); }
     }
   }
   window.addEventListener('scroll', atualiza, { passive: true });
